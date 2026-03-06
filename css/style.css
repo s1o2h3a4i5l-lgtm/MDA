@@ -1518,7 +1518,7 @@ footer {
   width: 28px;
   height: 28px;
 }
-
+/* about us */
 /* ── Container (replaces .r on about page) ── */
 .ab-wrap {
   max-width: 1160px;
@@ -1936,4 +1936,489 @@ footer {
     border-bottom: 1px solid var(--border);
   }
   .ab-sk:last-child { border-bottom: none; }
+}
+
+
+/* uceed */
+
+
+.uc-r {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+.uc-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h2.uc-sec-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin: 0.4rem 0 0.6rem;
+}
+.uc-sec-sub {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* HERO */
+.uc-hero {
+  background: #000;
+  color: #fff;
+  padding: 3.5rem 0;
+  border-bottom: 3px solid var(--accent);
+}
+.uc-hero .uc-r {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.uc-hero-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 1rem;
+}
+.uc-hero h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.uc-hero h1 span {
+  color: var(--accent);
+}
+.uc-hero p {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 440px;
+}
+.uc-btn-accent {
+  display: inline-block;
+  background: #c8f000;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.uc-btn-accent:hover { background: #ffffff; }
+.uc-btn-outline-w {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  transition: all 0.2s;
+  margin-left: 0.75rem;
+  text-decoration: none;
+}
+.uc-btn-outline-w:hover { background: rgba(255, 255, 255, 0.1); }
+
+.uc-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.uc-hstat {
+  background: #111;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+}
+.uc-hstat-n {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.uc-hstat-l {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 0.25rem;
+}
+
+/* INFO STRIP */
+.uc-info-strip { border-bottom: 1px solid var(--border); }
+.uc-info-strip .uc-r { display: grid; grid-template-columns: 1fr 1fr; }
+.uc-info-col { padding: 3rem; }
+.uc-info-col:first-child { border-right: 1px solid var(--border); }
+.uc-info-col .uc-label { display: block; margin-bottom: 0.5rem; }
+.uc-info-col h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+.uc-info-col p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+.uc-info-col p:last-of-type { margin-bottom: 0; }
+.uc-tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.uc-tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.25rem 0.65rem;
+  color: var(--mid);
+}
+
+/* COLLAPSE / READ MORE */
+.uc-collapse-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.uc-collapse-body.open { max-height: 400px; }
+.uc-read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.2s;
+}
+.uc-read-more-btn:hover { color: #000; }
+.uc-arrow { transition: transform 0.3s; display: inline-block; }
+.uc-read-more-btn.open .uc-arrow { transform: rotate(180deg); }
+
+/* APPROACH */
+.uc-approach {
+  padding: 3rem 0;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+.uc-approach .uc-r {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.uc-approach-aside .uc-label { display: block; margin-bottom: 0.5rem; }
+.uc-approach-aside p {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-top: 0.75rem;
+}
+.uc-approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.uc-acard { background: var(--bg); padding: 1.5rem 1.4rem; }
+.uc-acard--dark { background: #000; color: #fff; }
+.uc-acard--dark .uc-adesc { color: rgba(255, 255, 255, 0.6); }
+.uc-aicon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.uc-atitle {
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.uc-adesc { font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+
+/* TABS */
+.uc-tabbed { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+.uc-tab-nav {
+  display: flex;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 2.5rem;
+  gap: 0;
+overflow-x: visible;
+}
+.uc-tab-btn {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.uc-tab-btn.active { color: #000; border-bottom-color: #000; }
+.uc-tab-btn:hover { color: #000; }
+.uc-tab-pane { display: none; }
+.uc-tab-pane.active { display: block; }
+
+/* Eligibility */
+.uc-elig-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.uc-elig-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+.uc-elig-table thead th {
+  background: #000;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.1rem;
+  text-align: left;
+}
+.uc-elig-table tbody tr { border-bottom: 1px solid var(--border); }
+.uc-elig-table tbody td { padding: 1rem 1.1rem; color: var(--mid); line-height: 1.65; vertical-align: top; }
+.uc-elig-table tbody td:first-child {
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+  white-space: nowrap;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  width: 150px;
+}
+
+/* Exam Structure */
+.uc-exam-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.uc-ecard { border: 1px solid var(--border); }
+.uc-ecard-head {
+  background: #000;
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.uc-ecard-title { font-family: "Bebas Neue", sans-serif; font-size: 1.15rem; letter-spacing: 0.08em; }
+.uc-ecard-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.2rem 0.55rem;
+}
+.uc-struct-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.uc-struct-table tr { border-bottom: 1px solid var(--border); }
+.uc-struct-table tr:last-child { border-bottom: none; }
+.uc-struct-table td { padding: 0.75rem 1.1rem; color: var(--mid); vertical-align: top; }
+.uc-struct-table td:first-child {
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  width: 42%;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+}
+.uc-qtable-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.uc-qwrap { overflow-x: auto; }
+.uc-qtable { width: 100%; border-collapse: collapse; font-size: 0.79rem; }
+.uc-qtable thead th {
+  background: #000;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  padding: 0.65rem 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.uc-qtable thead th:first-child,
+.uc-qtable thead th:nth-child(2) { text-align: left; }
+.uc-qtable tbody tr { border-bottom: 1px solid var(--border); }
+.uc-qtable tbody tr:last-child { background: var(--bg2); font-weight: 600; }
+.uc-qtable tbody td { padding: 0.7rem 0.9rem; color: var(--mid); text-align: center; }
+.uc-qtable tbody td:first-child,
+.uc-qtable tbody td:nth-child(2) { text-align: left; }
+.uc-neg { color: #c0392b; }
+
+/* Syllabus */
+.uc-syl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.uc-syl-block { border: 1px solid var(--border); }
+.uc-syl-head {
+  background: #000;
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.uc-syl-title { font-family: "Bebas Neue", sans-serif; font-size: 1.1rem; letter-spacing: 0.08em; }
+.uc-syl-sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.uc-syl-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.uc-syl-row:last-child { border-bottom: none; }
+.uc-syl-area {
+  padding: 0.8rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.uc-syl-desc {
+  padding: 0.8rem 1rem;
+  font-size: 0.79rem;
+  color: var(--muted);
+  line-height: 1.65;
+  display: flex;
+  align-items: center;
+}
+
+/* Campuses */
+.uc-campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.uc-campus-bot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-top: none;
+}
+.uc-ccard { background: var(--bg); padding: 1.5rem 1.4rem; }
+.uc-cnum {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  color: var(--bg3);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.uc-cname { font-weight: 700; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.uc-cdis { font-size: 0.76rem; color: var(--muted); margin-bottom: 0.5rem; }
+.uc-cseats {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.uc-cfeat { font-size: 0.78rem; color: var(--muted); line-height: 1.65; }
+
+/* Fee Table */
+.uc-fee-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.uc-fee-table thead th {
+  background: #000;
+  color: #fff;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+.uc-fee-table tbody tr { border-bottom: 1px solid var(--border); }
+.uc-fee-table tbody td { padding: 0.9rem 1rem; color: var(--mid); }
+.uc-fee-table tbody td:first-child { font-weight: 700; color: #000; }
+.uc-fee-total { font-weight: 700; color: #000 !important; background: var(--bg2); }
+
+/* CTA */
+.uc-cta { background: #000; color: #fff; padding: 3.5rem 0; }
+.uc-cta .uc-r {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.uc-cta h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.uc-cta h2 span { color: var(--accent); }
+.uc-cta p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); line-height: 1.75; max-width: 400px; }
+.uc-cta-btns { display: flex; flex-direction: column; gap: 0.6rem; flex-shrink: 0; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .uc-r { padding: 0 1.5rem; }
+  .uc-hero .uc-r,
+  .uc-info-strip .uc-r { grid-template-columns: 1fr; }
+  .uc-info-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .uc-approach .uc-r { grid-template-columns: 1fr; }
+  .uc-elig-layout { grid-template-columns: 1fr; }
+  .uc-exam-cols,
+  .uc-syl-grid { grid-template-columns: 1fr; }
+  .uc-campus-grid { grid-template-columns: 1fr 1fr; }
+  .uc-campus-bot { grid-template-columns: 1fr; }
+  .uc-cta .uc-r { flex-direction: column; align-items: flex-start; }
+  .uc-cta-btns { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .uc-approach-grid { grid-template-columns: 1fr; }
+  .uc-campus-grid { grid-template-columns: 1fr; }
+  .uc-tab-btn { padding: 0.7rem 0.9rem; font-size: 0.62rem; }
 }
