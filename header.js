@@ -11,8 +11,8 @@ const header = `
   </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about_us.html">About Us</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_us.html">About Us</a></li>
            <li class="has-dropdown">
       <a href="#">Exams <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <ul class="dropdown">
