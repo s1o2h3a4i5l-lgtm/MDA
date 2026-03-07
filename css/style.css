@@ -1290,6 +1290,8 @@ footer {
   color: #fff;
   line-height: 1;
   margin: 0 0 0.75rem;
+  text-shadow: 0px 0px 20px black;
+  /* text-shadow: 0 0 20px rgba(0,0,0,0.5); */
 }
 
 .slide-desc {
