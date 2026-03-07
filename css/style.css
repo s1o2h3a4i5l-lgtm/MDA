@@ -1290,7 +1290,7 @@ footer {
   color: #000000;
   line-height: 1;
   margin: 0 0 0.75rem;
-  text-shadow: 0px 0px 10px black;
+  /* text-shadow: 0px 0px 10px black; */
   /* text-shadow: 0 0 20px rgba(0,0,0,0.5); */
 }
 
