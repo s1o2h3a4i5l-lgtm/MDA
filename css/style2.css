@@ -1253,6 +1253,23 @@ footer {
   position: relative;
 }
 
+/* FIXED GRADIENT OVERLAY (does not slide) */
+.mySwiper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.45) 35%,
+    rgba(0,0,0,0.05) 65%,
+    rgba(0,0,0,0) 80%
+  );
+}
+
 .mySwiper .swiper-slide img {
   width: 100%;
   height: auto;
@@ -1262,19 +1279,7 @@ footer {
   position: relative;
 }
 
-.mySwiper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
+
 .swiper-overlay {
   position: absolute;
   bottom: 2.5rem;
