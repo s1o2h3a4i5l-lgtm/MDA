@@ -7,6 +7,9 @@
   --muted: rgba(0, 0, 0, 0.55);
   --mid: rgba(0, 0, 0, 0.75);
 }
+
+
+
 *,
 *::before,
 *::after {
@@ -14,6 +17,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +33,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+b{
+  font-weight: 600;
+  color: var(--mid)
+}
+
+
 .label {
   font-size: 0.68rem;
   font-weight: 600;
@@ -203,6 +214,7 @@ nav {
 }
 
 /* HERO */
+
 .hero {
   min-height: 92vh;
   background: var(--bg);
@@ -412,7 +424,8 @@ nav {
 .sec-header p {
   font-size: 0.88rem;
   color: var(--muted);
-  max-width: 500px;
+  /* max-width: 500px; */
+  width: 100%;
   margin: 0 auto;
   line-height: 1.85;
 }
@@ -2434,3 +2447,4 @@ h2.uc-sec-title {
   overflow-x: auto;
 }
 } */
+
