@@ -1,7 +1,7 @@
 const header = `
 <header>
 <nav>
-      <a href="#" class="nav-logo"
+      <a href="index.html" class="nav-logo"
         ><img
           src="assets/images/logo.avif" class="nav-logo-img" alt=""/></a>
            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
@@ -21,6 +21,8 @@ const header = `
         <li class="p-15"><a href="#">CEED</a></li>
         <li class="p-15"><a href="#">NIFT</a></li>
         <li class="p-15"><a href="#">NATA</a></li>
+        <li class="p-15"><a href="#">JEE PAPER 2</a></li>
+        <li class="p-15"><a href="#">FC</a></li>
       </ul>
     </li>
         <li><a href="#">Blog</a></li>
