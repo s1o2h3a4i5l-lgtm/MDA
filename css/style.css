@@ -1088,19 +1088,13 @@ footer {
   gap: 0.6rem;
 }
 .fsoc {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 600;
   color: var(--muted);
   transition: all 0.2s;
 }
 .fsoc:hover {
-  border-color: #000;
   color: #000;
 }
 .fcol h4 {
