@@ -16,9 +16,9 @@ const header = `
            <li class="has-dropdown">
       <a href="#">Exams <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <ul class="dropdown">
-        <li class="p-15"><a href="#">NID DAT</a></li>
-        <li class="p-15"><a href="#">UCEED</a></li>
-        <li class="p-15"><a href="#">CEED</a></li>
+        <li class="p-15"><a href="nid.html">NID DAT</a></li>
+        <li class="p-15"><a href="uceed.html">UCEED</a></li>
+        <li class="p-15"><a href="ceed.html">CEED</a></li>
         <li class="p-15"><a href="#">NIFT</a></li>
         <li class="p-15"><a href="#">NATA</a></li>
         <li class="p-15"><a href="#">JEE PAPER 2</a></li>

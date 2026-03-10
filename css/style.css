@@ -35,7 +35,7 @@ a {
 }
 b{
   font-weight: 600;
-  color: var(--mid)
+  /* color: var(--mid) */
 }
 
 
@@ -2448,3 +2448,224 @@ h2.uc-sec-title {
 }
 } */
 
+/* ── Horizontal exam card (standalone, below grid) ─────────────────── */
+.exam-card-horizontal-wrap {
+  border-left: 1px solid var(--border);
+}
+
+.exam-card-horizontal-wrap .exam-card {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-top: 2px solid #d4ff00;
+  padding: 0;
+  background: #f7f7f5;
+}
+
+.exam-card-horizontal-wrap .exam-card::after {
+  display: none;
+}
+
+.exam-card-horizontal-wrap .exam-num {
+  flex: 0 0 5rem;
+  margin-bottom: 0;
+  font-size: 2.5rem;
+  color: rgba(0,0,0,0.12);
+  padding: 1.8rem 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.exam-card-horizontal-wrap .exam-name {
+  flex: 0 0 9rem;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border);
+  background: #efefec;
+}
+
+.exam-card-horizontal-wrap .exam-full {
+  flex: 0 0 28rem;
+  margin-bottom: 0;
+  padding: 1.8rem 1.8rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.6;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.exam-card-horizontal-wrap .exam-tags {
+  flex: 0 0 11rem;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0;
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.exam-card-horizontal-wrap .exam-tag {
+  background: #e8e8e4;
+  border-color: transparent;
+  color: rgba(0,0,0,0.5);
+}
+
+.exam-card-horizontal-wrap .exam-links {
+  flex: 0 0 13rem;
+  padding: 1.8rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+/* Mobile: revert to normal card layout */
+@media (max-width: 600px) {
+  .exam-card-horizontal-wrap .exam-card {
+    flex-direction: column;
+    border-top: 2px solid #d4ff00;
+    background: #f7f7f5;
+    padding: 2.8rem 1.5rem;
+  }
+  .exam-card-horizontal-wrap .exam-num  { flex: unset; border: none; padding: 0; margin-bottom: 1rem; font-size: 4rem; justify-content: flex-start; }
+  .exam-card-horizontal-wrap .exam-name { flex: unset; border: none; padding: 0; margin-bottom: 0.4rem; background: transparent; }
+  .exam-card-horizontal-wrap .exam-full { flex: unset; border: none; padding: 0; margin-bottom: 1.8rem; }
+  .exam-card-horizontal-wrap .exam-tags { flex: unset; flex-direction: row; flex-wrap: wrap; padding: 0; border: none; margin-bottom: 1.8rem; }
+  .exam-card-horizontal-wrap .exam-links { flex: unset; padding: 0; }
+}
+
+
+/* ============================================================
+   nid.css — NID page–specific styles
+   All uc-* layout classes are already in style.css.
+   This file adds only what's new: the switcher bar,
+   the page toggle, and the M.Des seat matrix table.
+   ============================================================ */
+
+/* ── PROGRAMME SWITCHER ── */
+.nid-switcher {
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  position: sticky;
+  bottom: 0;
+  z-index: 200;
+}
+
+.nid-switcher-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.nid-sw-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 0 1.5rem 0 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.nid-sw-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 1.1rem 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nid-sw-btn.active {
+  color: #fff;
+  border-bottom-color: var(--accent);
+}
+.nid-sw-btn:hover {
+  color: #fff;
+}
+
+.nid-sw-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 0.5rem;
+}
+
+/* ── PAGE TOGGLE ── */
+.nid-page {
+  display: none;
+}
+.nid-page.active {
+  display: block;
+}
+
+/* ── M.Des SEAT MATRIX TABLE ──
+   Reuses style.css's uc-fee-table pattern but with
+   centred data columns and a highlighted first column. */
+.nid-seat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+}
+.nid-seat-table thead th {
+  background: #000;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.1rem;
+  text-align: left;
+}
+.nid-seat-table thead th:not(:first-child) {
+  text-align: center;
+}
+.nid-seat-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+.nid-seat-table tbody td {
+  padding: 0.8rem 1.1rem;
+  color: var(--mid);
+  vertical-align: middle;
+  text-align: center;
+}
+.nid-seat-table tbody td:first-child {
+  font-weight: 600;
+  color: #000;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .nid-sw-label {
+    display: none;
+  }
+  .nid-sw-btn {
+    padding: 0.9rem 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .nid-sw-btn {
+    font-size: 0.65rem;
+    padding: 0.9rem 1rem;
+  }
+}
