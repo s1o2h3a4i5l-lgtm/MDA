@@ -136,7 +136,7 @@
           <!-- Row 1: Name + Phone -->
           <div class="fg">
             <label for="f-name">Full Name *</label>
-            <input type="text" id="f-name" name="name" placeholder="e.g. Anika Sharma" required />
+            <input type="text" id="f-name" name="name" required />
           </div>
 
           <div class="fg">
@@ -146,7 +146,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 5.72 5.72l1.27-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 +91
               </div>
-              <input type="tel" id="f-phone" name="phone" placeholder="98765 43210" maxlength="10" required class="fg-phone-input" />
+              <input type="tel" id="f-phone" name="phone" maxlength="10" required class="fg-phone-input" />
             </div>
           </div>
 
@@ -155,22 +155,16 @@
             <label for="f-exam">Exam You're Targeting *</label>
             <select id="f-exam" name="exam" required>
               <option value="" disabled selected>Select an exam</option>
-              <optgroup label="Design Entrance Exams">
                 <option value="nid-bdes">NID DAT — B.Des</option>
                 <option value="nid-mdes">NID DAT — M.Des</option>
                 <option value="uceed">UCEED — IIT B.Des</option>
                 <option value="ceed">CEED — IIT M.Des</option>
                 <option value="nift-bdes">NIFT — B.Des</option>
                 <option value="nift-mdes">NIFT — M.Des</option>
-              </optgroup>
-              <optgroup label="Architecture Entrance Exams">
                 <option value="nata">NATA — B.Arch</option>
                 <option value="jee2">JEE Paper 2 — B.Arch / B.Plan</option>
-              </optgroup>
-              <optgroup label="Other">
                 <option value="portfolio">Portfolio Preparation Only</option>
                 <option value="unsure">Not Sure Yet — Need Guidance</option>
-              </optgroup>
             </select>
           </div>
 
@@ -178,28 +172,17 @@
             <label for="f-course">Course You're Interested In *</label>
             <select id="f-course" name="course" required>
               <option value="" disabled selected>Select a course</option>
-              <optgroup label="Long-Term Programs">
-                <option value="2yr-offline">2 Year — Offline (Pune)</option>
-                <option value="2yr-online">2 Year — Online (Pan India)</option>
-                <option value="1yr-offline">1 Year — Offline</option>
-                <option value="1yr-online">1 Year — Online</option>
-              </optgroup>
-              <optgroup label="Focused Programs">
-                <option value="test-series">Test Series — 15 Mock Papers</option>
-                <option value="portfolio-prep">Portfolio Preparation</option>
-                <option value="crash">Crash Course (3 Months)</option>
-              </optgroup>
-              <optgroup label="Other">
-                <option value="counselling">Free Counselling Session</option>
+                <option value="2yr">2 Year</option>
+                <option value="1yr">1 Year</option>
+                <option value="test-series">Test Series</option>
                 <option value="tbd">Not Decided Yet</option>
-              </optgroup>
             </select>
           </div>
 
           <!-- Row 3: Email + Class -->
           <div class="fg">
             <label for="f-email">Email Address <span class="opt">(optional)</span></label>
-            <input type="email" id="f-email" name="email" placeholder="your@email.com" />
+            <input type="email" id="f-email" name="email" />
           </div>
 
           <div class="fg">
@@ -218,7 +201,7 @@
           <!-- Row 4: Message (full width) -->
           <div class="fg span2">
             <label for="f-message">Your Message / Questions</label>
-            <textarea id="f-message" name="message" placeholder="Tell us about your goals, preferred batch timing (morning / evening), online or offline preference, or anything else you'd like us to know…"></textarea>
+            <textarea id="f-message" name="message" ></textarea>
           </div>
 
           <!-- Consent -->
@@ -242,49 +225,9 @@
             Message sent! We'll be in touch within 24 hours.
           </div>
 
-        </div><!-- /form-grid -->
+        </div>
       </section>
-    </div><!-- /contact-main -->
-
-    <!-- ════════════ BOTTOM STRIP ════════════ -->
-    <!-- <div class="contact-strip">
-      <div class="strip-item">
-        <div class="strip-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <div class="strip-title">Visit Us</div>
-        <div class="strip-val">B202 Ashoka Plaza<br>Viman Nagar, Pune 411014</div>
-      </div>
-      <div class="strip-item">
-        <div class="strip-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 5.72 5.72l1.27-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div class="strip-title">Call / WhatsApp</div>
-        <div class="strip-val"><a href="tel:+918806105855">+91 88061 05855</a></div>
-      </div>
-      <div class="strip-item">
-        <div class="strip-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="strip-title">Email</div>
-        <div class="strip-val"><a href="mailto:mydesignacademia@gmail.com">mydesignacademia@gmail.com</a></div>
-      </div>
-      <div class="strip-item">
-        <div class="strip-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
-        <div class="strip-title">Follow Us</div>
-        <div class="strip-val"><a href="https://instagram.com/mydesignacademia" target="_blank">@mydesignacademia</a></div>
-      </div>
-    </div> -->
-
-    <!-- WhatsApp Floating Button -->
-    <!-- <a class="wa-btn" href="https://wa.me/918806105855" target="_blank" aria-label="Chat on WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.523 5.85L.057 23.571a.75.75 0 0 0 .92.92l5.773-1.457A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 0 1-4.953-1.355l-.355-.211-3.668.926.944-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-      </svg>
-    </a> -->
+    </div>
 
     <div id="footer"></div>
 
