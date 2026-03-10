@@ -69,5 +69,19 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
+function handleSubmit() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const exam = document.getElementById('f-exam').value;
+  const course = document.getElementById('f-course').value;
+  const consent = document.getElementById('f-consent').checked;
 
+  if (!name || !phone || !exam || !course || !consent) {
+    alert('Please fill in all required fields and accept the privacy policy.');
+    return;
+  }
+
+  document.getElementById('formSuccess').style.display = 'flex';
+  document.querySelector('.btn-submit').disabled = true;
+}
 
