@@ -40,17 +40,18 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // Scroll to top
-const scrollBtn = document.getElementById('scrollTopBtn');
-if (scrollBtn) {
-  window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
+window.addEventListener('load', () => {
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
 
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
 const hamburger = document.getElementById('navHamburger');
 const navLinks = document.getElementById('navLinks');
 
