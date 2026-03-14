@@ -233,5 +233,20 @@
 
     <script src="header.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var exam = params.get('exam');
+      var course = params.get('course');
+      if (exam) {
+        var el = document.getElementById('f-exam');
+        if (el) el.value = exam;
+      }
+      if (course) {
+        var el = document.getElementById('f-course');
+        if (el) el.value = course;
+      }
+    })();
+  </script>
   </body>
 </html>
