@@ -2112,7 +2112,7 @@ h2.uc-sec-title {
 
 /* COLLAPSE / READ MORE */
 .uc-collapse-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.uc-collapse-body.open { max-height: 400px; }
+.uc-collapse-body.open { max-height: 1000px; }
 .uc-read-more-btn {
   display: inline-flex;
   align-items: center;
