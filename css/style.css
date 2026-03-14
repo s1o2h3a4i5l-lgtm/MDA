@@ -3230,3 +3230,266 @@ h2.uc-sec-title {
   .strip-item     { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
   .strip-item:last-child { border-bottom: none; }
 }
+
+
+
+/* ============================================================
+   BLOG DETAIL PAGE — paste at the bottom of style.css
+   Uses existing: .label, .btn, .btn-white, .btn-outline,
+   .sec-header, var(--bg), var(--bg2), var(--bg3),
+   var(--border), var(--muted), var(--mid)
+   ============================================================ */
+
+/* ── HERO ── */
+.bd-hero {
+  background: #000;
+  color: #fff;
+  padding: 4rem 0 3.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.bd-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+.bd-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.bd-back {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+}
+.bd-back:hover { color: #d4ff00; }
+.bd-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.bd-category {
+  display: inline-block;
+  background: #d4ff00;
+  color: #000;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+}
+.bd-dot { color: rgba(255,255,255,0.3); }
+.bd-read-time {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+}
+.bd-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+.bd-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.bd-author-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+}
+.bd-author-avatar {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.9rem;
+  color: #d4ff00;
+  flex-shrink: 0;
+}
+.bd-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+.bd-author-name { font-weight: 600; font-size: 0.85rem; color: #fff; }
+.bd-author-role  { font-size: 0.68rem; color: rgba(255,255,255,0.38); }
+.bd-date-block   { display: flex; flex-direction: column; gap: 0.1rem; text-align: right; }
+.bd-date-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+}
+.bd-date-val { font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.55); }
+
+/* ── LAYOUT ── */
+.bd-layout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+}
+
+/* ── ARTICLE ── */
+.bd-article {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.bd-article section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.bd-article h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  border-top: 2px solid #000;
+  padding-top: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+.bd-article p {
+  font-size: 0.93rem;
+  line-height: 1.92;
+  color: var(--muted);
+}
+.bd-article b { font-weight: 600; color: #000; }
+
+/* ── FIGURE ── */
+.bd-figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.bd-figure-img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--border);
+}
+.bd-figcaption {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-style: italic;
+  padding: 0.7rem 0.9rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-top: none;
+  line-height: 1.6;
+}
+
+/* ── ARTICLE CTA ── */
+.bd-article-cta {
+  background: #000;
+  color: #fff;
+  padding: 2.8rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.bd-article-cta h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 0;
+}
+.bd-article-cta p {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+  margin: 0;
+}
+.bd-cta-btns {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* ── RELATED ── */
+.bd-related {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+.bd-related-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 3rem 4rem;
+}
+.bd-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid var(--border);
+}
+.bd-rel-card {
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  position: relative;
+  transition: background 0.2s;
+}
+.bd-rel-card:hover { background: var(--bg3); }
+.bd-rel-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: #d4ff00;
+  transition: width 0.3s;
+}
+.bd-rel-card:hover::after { width: 100%; }
+.bd-rel-body { display: flex; flex-direction: column; gap: 0.55rem; }
+.bd-rel-body .bd-category { align-self: flex-start; }
+.bd-rel-body h4 {
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #000;
+}
+.bd-rel-body p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+.bd-rel-body .bd-read-time { font-size: 0.68rem; color: var(--muted); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .bd-hero-inner { padding: 0 1.5rem; }
+  .bd-layout { padding: 3rem 1.5rem; }
+  .bd-related-inner { padding: 0 1.5rem 3rem; }
+  .bd-related-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .bd-meta-bar { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .bd-author-row { flex-wrap: wrap; }
+  .bd-date-block { text-align: left; }
+  .bd-related-grid { grid-template-columns: 1fr; }
+  .bd-article-cta { padding: 2rem 1.5rem; }
+  .bd-layout { padding: 2.5rem 1.5rem; }
+}
