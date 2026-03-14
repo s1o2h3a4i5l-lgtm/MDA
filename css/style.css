@@ -3636,3 +3636,119 @@ h2.uc-sec-title {
   .bl-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .bl-grid-wrap { padding-bottom: 3rem; }
 }
+
+
+/* ── Foreign Colleges Strip ─────────────────────────────────────────── */
+.fc-strip {
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.fc-strip-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+}
+
+.fc-strip-left {
+  padding: 2.2rem 2.5rem;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.fc-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fc-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: #000;
+  margin: 0;
+}
+
+.fc-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.fc-dest-list {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: rgba(0,0,0,0.3);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.fc-strip-right {
+  padding: 2.2rem 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc-cta {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid #000;
+  padding: 0.85rem 1.8rem;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.35s ease;
+}
+
+.fc-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fc-cta:hover {
+  color: #fff;
+}
+
+.fc-cta:hover::before {
+  transform: translateY(0);
+}
+
+.fc-cta span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .fc-strip-inner {
+    grid-template-columns: 1fr;
+  }
+  .fc-strip-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1.8rem 1.5rem;
+  }
+  .fc-strip-right {
+    padding: 1.5rem;
+    justify-content: flex-start;
+  }
+}
