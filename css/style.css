@@ -536,7 +536,7 @@ nav {
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 .course-card {
   border: 1px solid var(--border);
