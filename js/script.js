@@ -119,3 +119,11 @@ if (copyBtn) {
     });
   });
 }
+
+
+function indexToggle(id, btn) {
+  const el = document.getElementById(id);
+  const isOpen = el.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.childNodes[0].textContent = isOpen ? 'Read Less ' : 'Read More ';
+}
