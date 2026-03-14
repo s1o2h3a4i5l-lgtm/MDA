@@ -3493,3 +3493,140 @@ h2.uc-sec-title {
   .bd-article-cta { padding: 2rem 1.5rem; }
   .bd-layout { padding: 2.5rem 1.5rem; }
 }
+
+
+/* ============================================================
+   BLOG LISTING PAGE (blog.html)
+   Paste at the bottom of style.css
+   ============================================================ */
+
+/* ── SHARED META ── */
+.bl-meta-author {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #000;
+}
+.bl-avatar {
+  width: 28px;
+  height: 28px;
+  background: #000;
+  color: #d4ff00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+.bl-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.bl-dot { opacity: 0.4; }
+
+/* ── GRID ── */
+.bl-grid-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 3rem 5rem;
+}
+.bl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid var(--border);
+  margin-top: 0;
+}
+
+/* ── CARD ── */
+.bl-card {
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  margin-top: -1px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background 0.2s;
+  overflow: hidden;
+}
+.bl-card:hover { background: var(--bg2); }
+.bl-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: #d4ff00;
+  transition: width 0.3s ease;
+}
+.bl-card:hover::after { width: 100%; }
+.bl-card-img-wrap {
+  overflow: hidden;
+  height: 200px;
+  border-bottom: 1px solid var(--border);
+}
+.bl-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.bl-card:hover .bl-card-img { transform: scale(1.04); }
+.bl-card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+.bl-card-body .bd-category { align-self: flex-start; }
+.bl-card-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #000;
+}
+.bl-card-excerpt {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+}
+.bl-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .bl-featured-wrap,
+  .bl-grid-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+  .bl-featured { grid-template-columns: 1fr; }
+  .bl-featured-img-wrap {
+    height: 240px;
+    min-height: unset;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .bl-featured-body { padding: 2rem; }
+
+  .bl-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .bl-grid { grid-template-columns: 1fr; }
+  .bl-featured-body { padding: 1.5rem; }
+  .bl-grid-wrap { padding-bottom: 3rem; }
+}
