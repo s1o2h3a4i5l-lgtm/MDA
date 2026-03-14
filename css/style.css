@@ -3535,21 +3535,17 @@ h2.uc-sec-title {
 .bl-grid-wrap {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 3rem 5rem;
+  padding: 3rem 3rem 5rem;
 }
 .bl-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-left: 1px solid var(--border);
-  margin-top: 0;
+  gap: 2rem;
 }
 
 /* ── CARD ── */
 .bl-card {
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-  margin-top: -1px;
+  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -3566,6 +3562,7 @@ h2.uc-sec-title {
   transition: width 0.3s ease;
 }
 .bl-card:hover::after { width: 100%; }
+
 .bl-card-img-wrap {
   overflow: hidden;
   height: 200px;
@@ -3579,6 +3576,7 @@ h2.uc-sec-title {
   transition: transform 0.4s ease;
 }
 .bl-card:hover .bl-card-img { transform: scale(1.04); }
+
 .bl-card-body {
   padding: 1.8rem;
   display: flex;
@@ -3587,6 +3585,7 @@ h2.uc-sec-title {
   flex: 1;
 }
 .bl-card-body .bd-category { align-self: flex-start; }
+
 .bl-card-title {
   font-weight: 600;
   font-size: 0.92rem;
@@ -3599,6 +3598,25 @@ h2.uc-sec-title {
   line-height: 1.7;
   flex: 1;
 }
+/* ── READ MORE ── */
+.bl-read-more {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0,0,0,0.25);
+  padding: 0.45rem 0.9rem;
+  align-self: flex-start;
+  transition: all 0.2s;
+  color: #000;
+}
+.bl-card:hover .bl-read-more {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
 .bl-card-meta {
   display: flex;
   align-items: center;
@@ -3610,23 +3628,11 @@ h2.uc-sec-title {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
-  .bl-featured-wrap,
   .bl-grid-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
-
-  .bl-featured { grid-template-columns: 1fr; }
-  .bl-featured-img-wrap {
-    height: 240px;
-    min-height: unset;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .bl-featured-body { padding: 2rem; }
-
-  .bl-grid { grid-template-columns: 1fr 1fr; }
+  .bl-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 }
 
 @media (max-width: 600px) {
-  .bl-grid { grid-template-columns: 1fr; }
-  .bl-featured-body { padding: 1.5rem; }
+  .bl-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .bl-grid-wrap { padding-bottom: 3rem; }
 }
