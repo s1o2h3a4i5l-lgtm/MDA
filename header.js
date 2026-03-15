@@ -20,7 +20,7 @@ const header = `
         <li class="p-15"><a href="uceed.html">UCEED</a></li>
         <li class="p-15"><a href="ceed.html">CEED</a></li>
         <li class="p-15"><a href="nift.html">NIFT</a></li>
-        <li class="p-15"><a href="#">NATA</a></li>
+        <li class="p-15"><a href="nata.html">NATA</a></li>
         <li class="p-15"><a href="jee.html">JEE PAPER 2</a></li>
         <li class="p-15"><a href="fp.html">FC</a></li>
       </ul>
