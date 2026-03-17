@@ -76,16 +76,16 @@ const footer = `
           <a href="tel:+918806105855">+91 8806105855</a
           ><a
             href="/cdn-cgi/l/email-protection#93feeaf7f6e0faf4fdf2f0f2f7f6fefaf2d3f4fef2faffbdf0fcfe"
-            ><span
+            ><sa
               class="__cf_email__"
-              data-cfemail="721f0b1617011b151c13111316171f1b1332151f131b1e5c111d1f"
-              >[email&#160;protected]</span
-            ></a
+              herf:"mailto:mydesignacademia@gmail.com"
+              >mydesignacademia@gmail.com</a>
+            </a
           ><a href="#">@mydesignacademia</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 My Design Academia — All Rights Reserved</p>
+        <p>© <span id="year"></span> My Design Academia — All Rights Reserved</p>
         <p>Shaping the next generation of designers &amp; architects</p>
       </div>
     </footer>
@@ -101,7 +101,9 @@ const waBtn = `
     </a>
     <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
   </div>`;
+  
 
 document.getElementById("header").innerHTML = header;
 document.getElementById("footer").innerHTML = footer;
 document.body.insertAdjacentHTML("beforeend", waBtn);
+document.getElementById("year").textContent = new Date().getFullYear();
