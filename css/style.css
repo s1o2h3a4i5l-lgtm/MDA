@@ -3639,7 +3639,7 @@ h2.uc-sec-title {
 
 /* ── Foreign Colleges Strip ─────────────────────────────────────────── */
 .fc-strip {
-  margin-top: 3rem;
+  margin-bottom: 3rem;
   border: 1px solid var(--border);
   background: #fff;
 }

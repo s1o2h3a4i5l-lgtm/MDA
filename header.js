@@ -66,12 +66,6 @@ const footer = `
           </div>
         </div>
         <div class="fcol">
-          <h4>Navigation</h4>
-          <a href="#exams">Entrance Exams</a><a href="#courses">Courses</a
-          ><a href="#why">Why Us</a><a href="#events">Upcoming Batches</a
-          ><a href="#team">Faculty</a><a href="#faq">FAQ</a>
-        </div>
-        <div class="fcol">
           <h4>Exams</h4>
           <a href="#">NID DAT</a><a href="#">UCEED</a><a href="#">CEED</a
           ><a href="#">NIFT</a><a href="#">JEE Paper 2</a><a href="#">NATA</a>
