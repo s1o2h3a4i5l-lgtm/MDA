@@ -25,9 +25,9 @@ const header = `
         <li class="p-15"><a href="fp.html">FC</a></li>
       </ul>
     </li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" class="nav-cta">Free Counselling</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="contactus.html?course=counselling#form" class="nav-cta">Free Counselling</a></li>
       </ul>
     </nav>
 </header>

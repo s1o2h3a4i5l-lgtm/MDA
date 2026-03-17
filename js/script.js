@@ -144,7 +144,7 @@ const COURSE_SECTION_HTML = `
 <section id="courses">
   <div class="courses-grid r v">
     <div class="course-card featured">
-      <div class="course-rec">⭐ Most Recommended</div>
+      <div class="course-rec">Most Recommended</div>
       <div class="course-duration" style="color:#d4ff00">2 YEAR</div>
       <div class="course-type">Online / Offline</div>
       <div class="course-divider"></div>
