@@ -74,14 +74,9 @@ const footer = `
           <h4>Contact</h4>
           <p>Office B202, Ashoka Plaza<br />Viman Nagar, Pune 411014</p>
           <a href="tel:+918806105855">+91 8806105855</a
-          ><a
-            href="/cdn-cgi/l/email-protection#93feeaf7f6e0faf4fdf2f0f2f7f6fefaf2d3f4fef2faffbdf0fcfe"
-            ><sa
-              class="__cf_email__"
-              herf:"mailto:mydesignacademia@gmail.com"
-              >mydesignacademia@gmail.com</a>
-            </a
-          ><a href="#">@mydesignacademia</a>
+          ><a href="mailto:mydesignacademia@gmail.com">
+            <span class="__cf_email__">mydesignacademia@gmail.com</span>
+            </a><a href="#">@mydesignacademia</a>
         </div>
       </div>
       <div class="footer-bottom">
