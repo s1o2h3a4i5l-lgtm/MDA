@@ -580,16 +580,19 @@ nav {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.testimonialsSwiper {
   border-left: 1px solid var(--border);
 }
-.tcard {
+.testimonialsSwiper .swiper-slide {
   border-right: 1px solid var(--border);
+  box-sizing: border-box;
+}
+.tcard {
   padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 .tcard-quote {
   font-family: "Bebas Neue", sans-serif;
@@ -618,6 +621,18 @@ nav {
 .tcard-role {
   font-size: 0.72rem;
   color: var(--muted);
+}
+.testimonials-pagination {
+  position: static;
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.testimonials-pagination .swiper-pagination-bullet {
+  background: var(--fg);
+  opacity: 0.2;
+}
+.testimonials-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 /* EVENTS */
@@ -772,6 +787,9 @@ footer {
   border-right: 1px solid var(--border);
   padding: 4rem 2.5rem;
 }
+.fcol iframe{
+    filter: grayscale(1) contrast(1.05);
+}
 .footer-logo {
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.5rem;
@@ -872,7 +890,6 @@ footer {
   }
   .exams-grid,
   .courses-grid,
-  .testimonials-grid,
   .why-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -915,7 +932,6 @@ footer {
 @media (max-width: 600px) {
   .exams-grid,
   .courses-grid,
-  .testimonials-grid,
   .why-grid,
   .team-grid,
   .stats-bar {
@@ -1907,7 +1923,7 @@ h2.uc-sec-title {
 }
 .uc-struct-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 .uc-struct-table tr { border-bottom: 1px solid var(--border); }
-.uc-struct-table tr:last-child { border-bottom: none; }
+/* .uc-struct-table tr:last-child { border-bottom: none; } */
 .uc-struct-table td { padding: 0.75rem 1.1rem; color: var(--mid); vertical-align: top; }
 .uc-struct-table td:first-child {
   font-weight: 600;

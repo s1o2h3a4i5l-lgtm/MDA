@@ -214,8 +214,8 @@ const COURSE_SECTION_HTML = `
         else if (duration.indexOf('1') !== -1)    course = '1yr';
         else if (duration.indexOf('TEST') !== -1) course = 'test-series';
         var url = 'contactus.html?course=' + course;
-        if (exam) url += '&exam=' + exam;
-        window.location.href = url;
+        if (exam) url += '&exam=' + exam ;
+        window.location.href = url + '#form';
       });
     });
 

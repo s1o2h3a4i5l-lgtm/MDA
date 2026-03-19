@@ -76,8 +76,11 @@ const footer = `
           <a href="tel:+918806105855">+91 8806105855</a
           ><a href="mailto:mydesignacademia@gmail.com">
             <span class="__cf_email__">mydesignacademia@gmail.com</span>
-            </a><a href="#">@mydesignacademia</a>
         </div>
+         <div class="fcol">
+         <h4>Find us</h4>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.137132630417!2d73.9143637!3d18.567855299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1b771ed7bdf%3A0x9772ec2ce346d5d8!2sMY%20DESIGN%20ACADEMIA!5e0!3m2!1sen!2sin!4v1773936322791!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
       </div>
       <div class="footer-bottom">
         <p>© <span id="year"></span> My Design Academia — All Rights Reserved</p>
