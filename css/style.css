@@ -2303,7 +2303,9 @@ h2.uc-sec-title {
   padding: 0.8rem 1.1rem;
   color: var(--mid);
   vertical-align: middle;
-  text-align: center;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  font-weight: 600;
 }
 .nid-seat-table tbody td:first-child {
   font-weight: 600;

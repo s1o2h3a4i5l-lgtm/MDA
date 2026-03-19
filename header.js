@@ -22,7 +22,7 @@ const header = `
         <li class="p-15"><a href="nift.html">NIFT</a></li>
         <li class="p-15"><a href="nata.html">NATA</a></li>
         <li class="p-15"><a href="jee.html">JEE PAPER 2</a></li>
-        <li class="p-15"><a href="fp.html">FC</a></li>
+        <li class="p-15"><a href="fp.html">Foreign Portfolio</a></li>
       </ul>
     </li>
         <li><a href="blog.html">Blog</a></li>

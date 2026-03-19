@@ -215,7 +215,7 @@ const COURSE_SECTION_HTML = `
         else if (duration.indexOf('TEST') !== -1) course = 'test-series';
         var url = 'contactus.html?course=' + course;
         if (exam) url += '&exam=' + exam ;
-        window.location.href = url + '#form';
+        window.location.href = url + '#forms';
       });
     });
 
