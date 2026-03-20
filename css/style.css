@@ -1886,7 +1886,7 @@ h2.uc-sec-title {
   padding: 0.8rem 1.1rem;
   text-align: left;
 }
-.uc-elig-table tbody tr { border-bottom: 1px solid var(--border); }
+.uc-elig-table tbody tr { border: 1px solid var(--border); }
 .uc-elig-table tbody td { padding: 1rem 1.1rem; color: var(--mid); line-height: 1.65; vertical-align: top; }
 .uc-elig-table tbody td:first-child {
   font-weight: 600;
@@ -1902,7 +1902,7 @@ h2.uc-sec-title {
 
 /* Exam Structure */
 .uc-exam-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-.uc-ecard { border: 1px solid var(--border); }
+/* .uc-ecard { border: 1px solid var(--border); } */
 .uc-ecard-head {
   background: #000;
   color: #fff;
@@ -1922,7 +1922,7 @@ h2.uc-sec-title {
   padding: 0.2rem 0.55rem;
 }
 .uc-struct-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-.uc-struct-table tr { border-bottom: 1px solid var(--border); }
+.uc-struct-table tr { border: 1px solid var(--border); }
 /* .uc-struct-table tr:last-child { border-bottom: none; } */
 .uc-struct-table td { padding: 0.75rem 1.1rem; color: var(--mid); vertical-align: top; }
 .uc-struct-table td:first-child {
@@ -1958,7 +1958,7 @@ h2.uc-sec-title {
 }
 .uc-qtable thead th:first-child,
 .uc-qtable thead th:nth-child(2) { text-align: left; }
-.uc-qtable tbody tr { border-bottom: 1px solid var(--border); }
+.uc-qtable tbody tr { border: 1px solid var(--border); }
 .uc-qtable tbody tr:last-child { background: var(--bg2); font-weight: 600; }
 .uc-qtable tbody td { padding: 0.7rem 0.9rem; color: var(--mid); text-align: center; }
 .uc-qtable tbody td:first-child,
@@ -1967,7 +1967,7 @@ h2.uc-sec-title {
 
 /* Syllabus */
 .uc-syl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.uc-syl-block { border: 1px solid var(--border); }
+/* .uc-syl-block { border: 1px solid var(--border); } */
 .uc-syl-head {
   background: #000;
   color: #fff;
@@ -1987,9 +1987,9 @@ h2.uc-sec-title {
 .uc-syl-row {
   display: grid;
   grid-template-columns: 130px 1fr;
-  border-bottom: 1px solid var(--border);
+  border: 1px solid var(--border);
 }
-.uc-syl-row:last-child { border-bottom: none; }
+.uc-syl-row:last-child { border: 1px solid var(--border); }
 .uc-syl-area {
   padding: 0.8rem 1rem;
   font-size: 0.7rem;
@@ -2063,7 +2063,7 @@ h2.uc-sec-title {
   text-align: left;
   white-space: nowrap;
 }
-.uc-fee-table tbody tr { border-bottom: 1px solid var(--border); }
+.uc-fee-table tbody tr { border: 1px solid var(--border); }
 .uc-fee-table tbody td { padding: 0.9rem 1rem; color: var(--mid); }
 .uc-fee-table tbody td:first-child { font-weight: 700; color: #000; }
 .uc-fee-total { font-weight: 700; color: #000 !important; background: var(--bg2); }
