@@ -395,7 +395,6 @@ nav {
 /* COURSES */
 #courses {
   background: var(--bg2);
-  border-bottom: 1px solid var(--border);
 }
 .courses-grid {
   display: grid;
