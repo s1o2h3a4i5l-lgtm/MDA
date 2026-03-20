@@ -76,6 +76,7 @@ const footer = `
           <a href="tel:+918806105855">+91 8806105855</a
           ><a href="mailto:mydesignacademia@gmail.com">
             <span class="__cf_email__">mydesignacademia@gmail.com</span>
+            </a>
         </div>
          <div class="fcol">
          <h4>Find us</h4>
