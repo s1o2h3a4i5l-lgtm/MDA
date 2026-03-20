@@ -34,7 +34,9 @@ b{
   font-weight: 600;
   /* color: var(--mid) */
 }
-
+th{
+  padding: 5px;
+}
 .label {
   font-size: 0.68rem;
   font-weight: 600;
