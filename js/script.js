@@ -70,20 +70,50 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-function handleSubmit() {
-  const name = document.getElementById('f-name').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
-  const exam = document.getElementById('f-exam').value;
-  const course = document.getElementById('f-course').value;
-  const consent = document.getElementById('f-consent').checked;
+async function handleSubmit() {
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // ← replace later
 
-  if (!name || !phone || !exam || !course || !consent) {
-    alert('Please fill in all required fields and accept the privacy policy.');
-    return;
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const exam    = document.getElementById('f-exam').value;
+  const course  = document.getElementById('f-course').value;
+  const email   = document.getElementById('f-email').value.trim();
+  const grade   = document.getElementById('f-grade').value;
+  const message = document.getElementById('f-message').value.trim();
+
+  if (!name) { alert('Please enter your full name.'); return; }
+  if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) { alert('Please enter a valid 10-digit phone number.'); return; }
+  if (!exam) { alert('Please select an exam you\'re targeting.'); return; }
+  if (!course) { alert('Please select what you\'re interested in.'); return; }
+
+  const btn = document.querySelector('.btn-submit');
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Sending…';
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, phone, exam, course, email, grade, message })
+    });
+
+    if (res.ok) {
+      document.getElementById('formSuccess').style.display = 'flex';
+      document.querySelector('.submit-row').style.display = 'none';
+      ['f-name', 'f-phone', 'f-email', 'f-message'].forEach(id => document.getElementById(id).value = '');
+      ['f-exam', 'f-course', 'f-grade'].forEach(id => document.getElementById(id).selectedIndex = 0);
+    } else {
+      const data = await res.json();
+      alert(data?.errors?.[0]?.message || 'Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+    }
+  } catch (err) {
+    alert('Network error. Please check your connection and try again.');
+    btn.disabled = false;
+    btn.innerHTML = originalHTML;
   }
-
-  document.getElementById('formSuccess').style.display = 'flex';
-  document.querySelector('.btn-submit').disabled = true;
 }
 
 // blog-detail.js — save as js/blog-detail.js
