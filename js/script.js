@@ -22,22 +22,25 @@ const dropdownParent = document.querySelector('.has-dropdown');
 const dropdownToggle = document.querySelector('.has-dropdown > a');
 const dropdown = document.querySelector('.dropdown');
 
-dropdownToggle.addEventListener('click', (e) => {
-  e.preventDefault();
-  dropdownParent.classList.toggle('open');
-  dropdown.classList.toggle('open');
-});
+if (dropdownToggle) {
+  dropdownToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownParent.classList.toggle('open');
+    dropdown.classList.toggle('open');
+  });
 
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.has-dropdown')) {
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-dropdown')) {
+      dropdownParent.classList.remove('open');
+      dropdown.classList.remove('open');
+    }
+  });
+
+  window.addEventListener('scroll', () => {
     dropdownParent.classList.remove('open');
     dropdown.classList.remove('open');
-  }
-});
-window.addEventListener('scroll', () => {
-  dropdownParent.classList.remove('open');
-  dropdown.classList.remove('open');
-}, { passive: true });
+  }, { passive: true });
+}
 
 // Scroll to top
 window.addEventListener('load', () => {
@@ -55,20 +58,21 @@ window.addEventListener('load', () => {
 const hamburger = document.getElementById('navHamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-});
-
-// Close menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (!link.closest('.has-dropdown')) {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    }
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
   });
-});
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!link.closest('.has-dropdown')) {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      }
+    });
+  });
+}
 
 async function handleSubmit() {
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // ← replace later
