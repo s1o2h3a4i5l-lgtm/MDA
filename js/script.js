@@ -1,120 +1,160 @@
 // Scroll reveal animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('v');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("v");
+        observer.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.08 },
+);
 
-document.querySelectorAll('.r').forEach(el => observer.observe(el));
+document.querySelectorAll(".r").forEach((el) => observer.observe(el));
 
 // Trigger elements already in view on load
-window.addEventListener('load', () => {
-  document.querySelectorAll('.r').forEach(el => {
+window.addEventListener("load", () => {
+  document.querySelectorAll(".r").forEach((el) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) el.classList.add('v');
+    if (rect.top < window.innerHeight) el.classList.add("v");
   });
 });
 // Dropdown
-const dropdownParent = document.querySelector('.has-dropdown');
-const dropdownToggle = document.querySelector('.has-dropdown > a');
-const dropdown = document.querySelector('.dropdown');
+const dropdownParent = document.querySelector(".has-dropdown");
+const dropdownToggle = document.querySelector(".has-dropdown > a");
+const dropdown = document.querySelector(".dropdown");
 
 if (dropdownToggle) {
-  dropdownToggle.addEventListener('click', (e) => {
+  dropdownToggle.addEventListener("click", (e) => {
     e.preventDefault();
-    dropdownParent.classList.toggle('open');
-    dropdown.classList.toggle('open');
+    dropdownParent.classList.toggle("open");
+    dropdown.classList.toggle("open");
   });
 
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.has-dropdown')) {
-      dropdownParent.classList.remove('open');
-      dropdown.classList.remove('open');
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".has-dropdown")) {
+      dropdownParent.classList.remove("open");
+      dropdown.classList.remove("open");
     }
   });
 
-  window.addEventListener('scroll', () => {
-    dropdownParent.classList.remove('open');
-    dropdown.classList.remove('open');
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      dropdownParent.classList.remove("open");
+      dropdown.classList.remove("open");
+    },
+    { passive: true },
+  );
 }
 
 // Scroll to top
-window.addEventListener('load', () => {
-  const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener("load", () => {
+  const scrollBtn = document.getElementById("scrollTopBtn");
   if (scrollBtn) {
-    window.addEventListener('scroll', () => {
-      scrollBtn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        scrollBtn.classList.toggle("visible", window.scrollY > 400);
+      },
+      { passive: true },
+    );
 
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 });
-const hamburger = document.getElementById('navHamburger');
-const navLinks = document.getElementById('navLinks');
+const hamburger = document.getElementById("navHamburger");
+const navLinks = document.getElementById("navLinks");
 
 if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    navLinks.classList.toggle("open");
   });
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (!link.closest('.has-dropdown')) {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (!link.closest(".has-dropdown")) {
+        hamburger.classList.remove("open");
+        navLinks.classList.remove("open");
       }
     });
   });
 }
 
 async function handleSubmit() {
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // ← replace later
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // ← replace later
 
-  const name    = document.getElementById('f-name').value.trim();
-  const phone   = document.getElementById('f-phone').value.trim();
-  const exam    = document.getElementById('f-exam').value;
-  const course  = document.getElementById('f-course').value;
-  const email   = document.getElementById('f-email').value.trim();
-  const grade   = document.getElementById('f-grade').value;
-  const message = document.getElementById('f-message').value.trim();
+  const name = document.getElementById("f-name").value.trim();
+  const phone = document.getElementById("f-phone").value.trim();
+  const exam = document.getElementById("f-exam").value;
+  const course = document.getElementById("f-course").value;
+  const email = document.getElementById("f-email").value.trim();
+  const grade = document.getElementById("f-grade").value;
+  const message = document.getElementById("f-message").value.trim();
 
-  if (!name) { alert('Please enter your full name.'); return; }
-  if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) { alert('Please enter a valid 10-digit phone number.'); return; }
-  if (!exam) { alert('Please select an exam you\'re targeting.'); return; }
-  if (!course) { alert('Please select what you\'re interested in.'); return; }
+  if (!name) {
+    alert("Please enter your full name.");
+    return;
+  }
+  if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
+  if (!exam) {
+    alert("Please select an exam you're targeting.");
+    return;
+  }
+  if (!course) {
+    alert("Please select what you're interested in.");
+    return;
+  }
 
-  const btn = document.querySelector('.btn-submit');
+  const btn = document.querySelector(".btn-submit");
   const originalHTML = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = 'Sending…';
+  btn.innerHTML = "Sending…";
 
   try {
     const res = await fetch(FORMSPREE_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name, phone, exam, course, email, grade, message })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        exam,
+        course,
+        email,
+        grade,
+        message,
+      }),
     });
 
     if (res.ok) {
-      document.getElementById('formSuccess').style.display = 'flex';
-      document.querySelector('.submit-row').style.display = 'none';
-      ['f-name', 'f-phone', 'f-email', 'f-message'].forEach(id => document.getElementById(id).value = '');
-      ['f-exam', 'f-course', 'f-grade'].forEach(id => document.getElementById(id).selectedIndex = 0);
+      document.getElementById("formSuccess").style.display = "flex";
+      document.querySelector(".submit-row").style.display = "none";
+      ["f-name", "f-phone", "f-email", "f-message"].forEach(
+        (id) => (document.getElementById(id).value = ""),
+      );
+      ["f-exam", "f-course", "f-grade"].forEach(
+        (id) => (document.getElementById(id).selectedIndex = 0),
+      );
     } else {
       const data = await res.json();
-      alert(data?.errors?.[0]?.message || 'Something went wrong. Please try again.');
+      alert(
+        data?.errors?.[0]?.message || "Something went wrong. Please try again.",
+      );
       btn.disabled = false;
       btn.innerHTML = originalHTML;
     }
   } catch (err) {
-    alert('Network error. Please check your connection and try again.');
+    alert("Network error. Please check your connection and try again.");
     btn.disabled = false;
     btn.innerHTML = originalHTML;
   }
@@ -122,36 +162,69 @@ async function handleSubmit() {
 
 function indexToggle(id, btn) {
   const el = document.getElementById(id);
-  const isOpen = el.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  btn.childNodes[0].textContent = isOpen ? 'Read Less ' : 'Read More ';
+  const isOpen = el.classList.toggle("open");
+  btn.classList.toggle("open", isOpen);
+  btn.childNodes[0].textContent = isOpen ? "Read Less " : "Read More ";
 }
 
 function nataShowTab(id, btn) {
-  const section = btn.closest('.uc-tabbed');
-  section.querySelectorAll('.uc-tab-pane').forEach(p => p.classList.remove('active'));
-  section.querySelectorAll('.uc-tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+  const section = btn.closest(".uc-tabbed");
+  section
+    .querySelectorAll(".uc-tab-pane")
+    .forEach((p) => p.classList.remove("active"));
+  section
+    .querySelectorAll(".uc-tab-btn")
+    .forEach((b) => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
 }
 
 function nataToggle(id, btn) {
   const el = document.getElementById(id);
-  const isOpen = el.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  btn.childNodes[0].textContent = isOpen ? 'Read Less ' : 'Read More ';
+  const isOpen = el.classList.toggle("open");
+  btn.classList.toggle("open", isOpen);
+  btn.childNodes[0].textContent = isOpen ? "Read Less " : "Read More ";
+}
+
+function nidSwitch(id, btn) {
+  document
+    .querySelectorAll(".nid-page")
+    .forEach((p) => p.classList.remove("active"));
+  document
+    .querySelectorAll(".nid-sw-btn")
+    .forEach((b) => b.classList.remove("active"));
+  document.getElementById("nid-page-" + id).classList.add("active");
+  btn.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+function nidShowTab(id, btn) {
+  const section = btn.closest(".uc-tabbed");
+  section
+    .querySelectorAll(".uc-tab-pane")
+    .forEach((p) => p.classList.remove("active"));
+  section
+    .querySelectorAll(".uc-tab-btn")
+    .forEach((b) => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+}
+function nidToggle(id, btn) {
+  const el = document.getElementById(id);
+  const isOpen = el.classList.toggle("open");
+  btn.classList.toggle("open", isOpen);
+  btn.childNodes[0].textContent = isOpen ? "Read Less " : "Read More ";
 }
 
 // ─── Courses Section ─────────────────────────────────────────────────────────
 
 const PAGE_EXAM_MAP = {
-  'ceed.html':  'ceed',
-  'uceed.html': 'uceed',
-  'nid.html':   'nid-bdes',
-  'nift.html':  'nift-bdes',
-  'jee.html':   'jee2',
-  'nata.html':  'nata',
-  'fp.html':    'portfolio',
+  "ceed.html": "ceed",
+  "uceed.html": "uceed",
+  "nid.html": "nid-bdes",
+  "nift.html": "nift-bdes",
+  "jee.html": "jee2",
+  "nata.html": "nata",
+  "fp.html": "portfolio",
 };
 
 const COURSE_SECTION_HTML = `
@@ -201,42 +274,46 @@ const COURSE_SECTION_HTML = `
 </section>`;
 
 (function () {
-  var placeholders = document.querySelectorAll('.courses-section-placeholder');
+  var placeholders = document.querySelectorAll(".courses-section-placeholder");
   if (!placeholders.length) return;
 
-  var page = window.location.pathname.split('/').pop() || 'index.html';
-  var pageExam = PAGE_EXAM_MAP[page] || '';
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var pageExam = PAGE_EXAM_MAP[page] || "";
 
   placeholders.forEach(function (placeholder) {
-    var exam = placeholder.getAttribute('data-exam') || pageExam;
+    var exam = placeholder.getAttribute("data-exam") || pageExam;
 
-    var alreadyInsideSection = placeholder.closest('#courses') !== null;
+    var alreadyInsideSection = placeholder.closest("#courses") !== null;
 
-    var wrapper = document.createElement('div');
+    var wrapper = document.createElement("div");
     wrapper.innerHTML = COURSE_SECTION_HTML;
     var toInject = alreadyInsideSection
-      ? wrapper.querySelector('.courses-grid')
+      ? wrapper.querySelector(".courses-grid")
       : wrapper.firstElementChild;
 
-    toInject.querySelectorAll('.course-btn').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
+    toInject.querySelectorAll(".course-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
         e.preventDefault();
-        var card = this.closest('.course-card');
-        var duration = card ? card.querySelector('.course-duration').textContent.trim().toUpperCase() : '';
-        var course = 'tbd';
-        if (duration.indexOf('2') !== -1)         course = '2yr';
-        else if (duration.indexOf('1') !== -1)    course = '1yr';
-        else if (duration.indexOf('TEST') !== -1) course = 'test-series';
-        var url = 'contactus.html?course=' + course;
-        if (exam) url += '&exam=' + exam ;
-        window.location.href = url + '#form';
+        var card = this.closest(".course-card");
+        var duration = card
+          ? card
+              .querySelector(".course-duration")
+              .textContent.trim()
+              .toUpperCase()
+          : "";
+        var course = "tbd";
+        if (duration.indexOf("2") !== -1) course = "2yr";
+        else if (duration.indexOf("1") !== -1) course = "1yr";
+        else if (duration.indexOf("TEST") !== -1) course = "test-series";
+        var url = "contactus.html?course=" + course;
+        if (exam) url += "&exam=" + exam;
+        window.location.href = url + "#form";
       });
     });
 
     placeholder.parentNode.replaceChild(toInject, placeholder);
   });
 })();
-
 
 // ===== NAVIGATION HELPERS =====
 function stop(e) {
@@ -249,42 +326,72 @@ function navigateTo(e, url, section) {
   if (section && location.pathname.includes(url)) {
     activateSection(section);
   } else {
-    window.location.href = section ? url + '#' + section : url;
+    window.location.href = section ? url + "#" + section : url;
   }
 }
 
-function goToNIDBDes(e)    { navigateTo(e, 'nid.html',  'bdes'); }
-function goToNIDMDes(e)    { navigateTo(e, 'nid.html',  'mdes'); }
-function goToNIFTBDes(e)   { navigateTo(e, 'nift.html', 'bdes'); }
-function goToNIFTMDes(e)   { navigateTo(e, 'nift.html', 'mdes'); }
-function goToUCEED(e)      { navigateTo(e, 'uceed.html'); }
-function goToUCEEDBDes(e)  { navigateTo(e, 'uceed.html'); }
-function goToCEED(e)       { navigateTo(e, 'ceed.html'); }
-function goToCEEDMDes(e)   { navigateTo(e, 'ceed.html'); }
-function goToNATABArch(e)  { navigateTo(e, 'nata.html'); }
-function goToCOA(e)        { navigateTo(e, 'nata.html'); }
-function goToJEEBArch(e)   { navigateTo(e, 'jee.html'); }
-function goToJEEBPlanning(e){ navigateTo(e, 'jee.html'); }
-function goToJEE(e)        { navigateTo(e, 'jee.html'); }
+function goToNIDBDes(e) {
+  navigateTo(e, "nid.html", "bdes");
+}
+function goToNIDMDes(e) {
+  navigateTo(e, "nid.html", "mdes");
+}
+function goToNIFTBDes(e) {
+  navigateTo(e, "nift.html", "bdes");
+}
+function goToNIFTMDes(e) {
+  navigateTo(e, "nift.html", "mdes");
+}
+function goToUCEED(e) {
+  navigateTo(e, "uceed.html");
+}
+function goToUCEEDBDes(e) {
+  navigateTo(e, "uceed.html");
+}
+function goToCEED(e) {
+  navigateTo(e, "ceed.html");
+}
+function goToCEEDMDes(e) {
+  navigateTo(e, "ceed.html");
+}
+function goToNATABArch(e) {
+  navigateTo(e, "nata.html");
+}
+function goToCOA(e) {
+  navigateTo(e, "nata.html");
+}
+function goToJEEBArch(e) {
+  navigateTo(e, "jee.html");
+}
+function goToJEEBPlanning(e) {
+  navigateTo(e, "jee.html");
+}
+function goToJEE(e) {
+  navigateTo(e, "jee.html");
+}
 
 // ===== SECTION SWITCH (NID + NIFT) =====
 function activateSection(type) {
-  document.querySelectorAll('.nid-page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nid-sw-btn').forEach(b => b.classList.remove('active'));
+  document
+    .querySelectorAll(".nid-page")
+    .forEach((p) => p.classList.remove("active"));
+  document
+    .querySelectorAll(".nid-sw-btn")
+    .forEach((b) => b.classList.remove("active"));
 
-  const page = document.getElementById('nid-page-' + type);
-  if (page) page.classList.add('active');
+  const page = document.getElementById("nid-page-" + type);
+  if (page) page.classList.add("active");
 
-  const buttons = document.querySelectorAll('.nid-sw-btn');
-  if (type === "bdes" && buttons[0]) buttons[0].classList.add('active');
-  if (type === "mdes" && buttons[1]) buttons[1].classList.add('active');
+  const buttons = document.querySelectorAll(".nid-sw-btn");
+  if (type === "bdes" && buttons[0]) buttons[0].classList.add("active");
+  if (type === "mdes" && buttons[1]) buttons[1].classList.add("active");
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // ===== HASH SUPPORT =====
 window.addEventListener("DOMContentLoaded", () => {
-  const hash = window.location.hash.replace('#', '');
+  const hash = window.location.hash.replace("#", "");
   if (hash === "bdes" || hash === "mdes") {
     activateSection(hash);
   }
