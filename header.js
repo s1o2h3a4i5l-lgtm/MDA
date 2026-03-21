@@ -3,7 +3,7 @@ const header = `
 <nav>
       <a href="index.html" class="nav-logo"
         ><img
-          src="assets/images/logo.avif" class="nav-logo-img" alt=""/></a>
+          src="assets/images/logo.avif" class="nav-logo-img" alt="My Design Academia"/></a>
            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
     <span></span>
     <span></span>
