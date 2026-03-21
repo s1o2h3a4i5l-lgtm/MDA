@@ -300,6 +300,12 @@ nav {
   line-height: 1.85;
 }
 
+@media (max-width: 600px) {
+.sec-header p {
+  width: 75%;
+}
+}
+
 /* EXAMS */
 #exams {
   background: var(--bg);
