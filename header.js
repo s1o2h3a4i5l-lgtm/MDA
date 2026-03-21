@@ -67,8 +67,7 @@ const footer = `
         </div>
         <div class="fcol">
           <h4>Exams</h4>
-          <a href="#">NID DAT</a><a href="#">UCEED</a><a href="#">CEED</a
-          ><a href="#">NIFT</a><a href="#">JEE Paper 2</a><a href="#">NATA</a>
+          <a href="nid.html">NID DAT</a><a href="uceed.html">UCEED</a><a href="ceed.html">CEED</a><a href="nift.html">NIFT</a><a href="jee.html">JEE Paper 2</a><a href="nata.html">NATA</a>
         </div>
         <div class="fcol">
           <h4>Contact</h4>
