@@ -190,122 +190,114 @@
 
         <div class="exams-grid r">
 
-            <a href="nid.html" class="exam-card">
-              <div class="exam-num">01</div>
-              <div class="exam-name">NID DAT</div>
-              <div class="exam-full">
-                National Institute of Design — an "Institute of National Importance"
-                offering B.Des, M.Des &amp; doctoral programs across design
-                disciplines.
-              </div>
-              <div class="exam-tags">
-                <span class="exam-tag">B.Des</span>
-                <span class="exam-tag">M.Des</span>
-              </div>
-              <div class="exam-links">
-                <span class="exam-link">Eligibility criteria</span>
-                <span class="exam-link">Exam pattern</span>
-                <span class="exam-link">Campuses and Disciplines</span>
-                <span class="exam-link">Fee structure</span>
-              </div>
-            </a>
+          <a href="nid.html" class="exam-card">
+            <div class="exam-num">01</div>
+            <div class="exam-name">NID DAT</div>
+            <div class="exam-full">
+              National Institute of Design — an "Institute of National Importance"
+              offering B.Des, M.Des &amp; doctoral programs across design disciplines.
+            </div>
+            <div class="exam-tags">
+              <button id="btn-nid-bdes" class="exam-tag" onclick="goToNIDBDes(event)">B.Des</button>
+              <button id="btn-nid-mdes" class="exam-tag" onclick="goToNIDMDes(event)">M.Des</button>
+            </div>
+            <div class="exam-links">
+              <span class="exam-link">Eligibility criteria</span>
+              <span class="exam-link">Exam pattern</span>
+              <span class="exam-link">Campuses and Disciplines</span>
+              <span class="exam-link">Fee structure</span>
+            </div>
+          </a>
 
-            <a href="uceed.html" class="exam-card">
-              <div class="exam-num">02</div>
-              <div class="exam-name">UCEED</div>
-              <div class="exam-full">
-                Conducted by IIT Bombay for B.Des admission to IITs, IISc &amp;
-                IIITDMs. Tests creativity, design thinking &amp; visual perception.
-              </div>
-              <div class="exam-tags">
-                <span class="exam-tag">UCEED</span>
-                <span class="exam-tag">B.Des</span>
-              </div>
-              <div class="exam-links">
-                <span class="exam-link">Eligibility criteria</span>
-                <span class="exam-link">Exam pattern and syllabus</span>
-                <span class="exam-link">Campuses</span>
-                <span class="exam-link">Fee structure</span>
-              </div>
-            </a>
+          <a href="uceed.html" class="exam-card">
+            <div class="exam-num">02</div>
+            <div class="exam-name">UCEED</div>
+            <div class="exam-full">
+              Conducted by IIT Bombay for B.Des admission to IITs, IISc &amp; IIITDMs.
+            </div>
+            <div class="exam-tags">
+              <button id="btn-uceed" class="exam-tag" onclick="goToUCEED(event)">UCEED</button>
+              <button id="btn-uceed-bdes" class="exam-tag" onclick="goToUCEEDBDes(event)">B.Des</button>
+            </div>
+            <div class="exam-links">
+              <span class="exam-link">Eligibility criteria</span>
+              <span class="exam-link">Exam pattern and syllabus</span>
+              <span class="exam-link">Campuses</span>
+              <span class="exam-link">Fee structure</span>
+            </div>
+          </a>
 
-            <a href="ceed.html" class="exam-card">
-              <div class="exam-num">03</div>
-              <div class="exam-name">CEED</div>
-              <div class="exam-full">
-                Conducted by IIT Bombay for M.Des admission to IITs, IISc &amp;
-                IIITDMs. Tests creativity, design thinking &amp; visual perception.
-              </div>
-              <div class="exam-tags">
-                <span class="exam-tag">CEED</span>
-                <span class="exam-tag">M.Des</span>
-              </div>
-              <div class="exam-links">
-                <span class="exam-link">Eligibility criteria</span>
-                <span class="exam-link">Exam pattern and syllabus</span>
-                <span class="exam-link">Campuses and Disciplines</span>
-                <span class="exam-link">Fee structure</span>
-              </div>
-            </a>
+          <a href="ceed.html" class="exam-card">
+            <div class="exam-num">03</div>
+            <div class="exam-name">CEED</div>
+            <div class="exam-full">
+              Conducted by IIT Bombay for M.Des admission to IITs, IISc &amp; IIITDMs.
+            </div>
+            <div class="exam-tags">
+              <button id="btn-ceed" class="exam-tag" onclick="goToCEED(event)">CEED</button>
+              <button id="btn-ceed-mdes" class="exam-tag" onclick="goToCEEDMDes(event)">M.Des</button>
+            </div>
+            <div class="exam-links">
+              <span class="exam-link">Eligibility criteria</span>
+              <span class="exam-link">Exam pattern and syllabus</span>
+              <span class="exam-link">Campuses and Disciplines</span>
+              <span class="exam-link">Fee structure</span>
+            </div>
+          </a>
 
-            <a href="nift.html" class="exam-card">
-              <div class="exam-num">04</div>
-              <div class="exam-name">NIFT</div>
-              <div class="exam-full">
-                National Institute of Fashion Technology — India's leading fashion
-                &amp; design institute blending creativity, technology and industry
-                exposure.
-              </div>
-              <div class="exam-tags">
-                <span class="exam-tag">B.Des</span>
-                <span class="exam-tag">M.Des</span>
-              </div>
-              <div class="exam-links">
-                <span class="exam-link">Eligibility criteria</span>
-                <span class="exam-link">Exam pattern</span>
-                <span class="exam-link">Campuses and Disciplines</span>
-                <span class="exam-link">Fee structure</span>
-              </div>
-            </a>
+          <a href="nift.html" class="exam-card">
+            <div class="exam-num">04</div>
+            <div class="exam-name">NIFT</div>
+            <div class="exam-full">
+              National Institute of Fashion Technology — India's leading fashion &amp; design institute.
+            </div>
+            <div class="exam-tags">
+              <button id="btn-nift-bdes" class="exam-tag" onclick="goToNIFTBDes(event)">B.Des</button>
+              <button id="btn-nift-mdes" class="exam-tag" onclick="goToNIFTMDes(event)">M.Des</button>
+            </div>
+            <div class="exam-links">
+              <span class="exam-link">Eligibility criteria</span>
+              <span class="exam-link">Exam pattern</span>
+              <span class="exam-link">Campuses and Disciplines</span>
+              <span class="exam-link">Fee structure</span>
+            </div>
+          </a>
 
-            <a href="nata.html" class="exam-card">
-              <div class="exam-num">05</div>
-              <div class="exam-name">NATA</div>
-              <div class="exam-full">
-                National Aptitude Test in Architecture by the Council of
-                Architecture for B.Arch admissions across India.
-              </div>
-              <div class="exam-tags">
-                <span class="exam-tag">B.Arch</span
-                ><span class="exam-tag">Council of Architecture</span>
-              </div>
-              <div class="exam-links">
-                <span class="exam-link">Eligibility criteria</span>
-                <span class="exam-link">Exam pattern and Syllabus</span>
-                <span class="exam-link">Best Architecture colleges</span>
-              </div>
-            </a>
+          <a href="nata.html" class="exam-card">
+            <div class="exam-num">05</div>
+            <div class="exam-name">NATA</div>
+            <div class="exam-full">
+              National Aptitude Test in Architecture by the Council of Architecture for B.Arch admissions across India.
+            </div>
+            <div class="exam-tags">
+              <button id="btn-nata-barch" class="exam-tag" onclick="goToNATABArch(event)">B.Arch</button>
+              <button id="btn-nata-coa" class="exam-tag" onclick="goToCOA(event)">Council of Architecture</button>
+            </div>
+            <div class="exam-links">
+              <span class="exam-link">Eligibility criteria</span>
+              <span class="exam-link">Exam pattern and Syllabus</span>
+              <span class="exam-link">Best Architecture colleges</span>
+            </div>
+          </a>
 
-            <a href="jee.html" class="exam-card">
-              <div class="exam-num">06</div>
-              <div class="exam-name">JEE PAPER 2</div>
-              <div class="exam-full">
-                National level entrance for B.Arch &amp; B.Planning at IITs, NITs.
-                Tests drawing, mathematics, spatial awareness &amp; design sense.
-              </div>
-              <div class="exam-tags">
-                <span class="exam-tag">B.Arch</span
-                ><span class="exam-tag">B.Planning</span
-                ><span class="exam-tag">IITs &amp; NITs</span>
-              </div>
-              <div class="exam-links">
-                <span class="exam-link">Eligibility criteria</span>
-                <span class="exam-link">Exam pattern and syllabus</span>
-                <span class="exam-link">Architecture colleges - via JEE - 2</span>
-              </div>
-            </a>
-
-          </div>
+          <a href="jee.html" class="exam-card">
+            <div class="exam-num">06</div>
+            <div class="exam-name">JEE PAPER 2</div>
+            <div class="exam-full">
+              National level entrance for B.Arch &amp; B.Planning at IITs, NITs.
+            </div>
+            <div class="exam-tags">
+              <button id="btn-jee-barch" class="exam-tag" onclick="goToJEEBArch(event)">B.Arch</button>
+              <button id="btn-jee-bplanning" class="exam-tag" onclick="goToJEEBPlanning(event)">B.Planning</button>
+              <button id="btn-jee-colleges" class="exam-tag" onclick="goToJEE(event)">IITs &amp; NITs</button>
+            </div>
+            <div class="exam-links">
+              <span class="exam-link">Eligibility criteria</span>
+              <span class="exam-link">Exam pattern and syllabus</span>
+              <span class="exam-link">Architecture colleges - via JEE - 2</span>
+            </div>
+          </a>
+        </div>
        
       </section>
 

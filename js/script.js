@@ -252,3 +252,120 @@ const COURSE_SECTION_HTML = `
     placeholder.parentNode.replaceChild(toInject, placeholder);
   });
 })();
+
+
+// ===== COMMON =====
+function stop(e) {
+  e.preventDefault();
+  e.stopPropagation();
+}
+
+// ===== NID =====
+function goToNIDBDes(e) {
+  stop(e);
+  if (location.pathname.includes("nid.html")) {
+    activateSection("bdes");
+  } else {
+    window.location.href = "nid.html#bdes";
+  }
+}
+
+function goToNIDMDes(e) {
+  stop(e);
+  if (location.pathname.includes("nid.html")) {
+    activateSection("mdes");
+  } else {
+    window.location.href = "nid.html#mdes";
+  }
+}
+
+// ===== NIFT =====
+function goToNIFTBDes(e) {
+  stop(e);
+  if (location.pathname.includes("nift.html")) {
+    activateSection("bdes");
+  } else {
+    window.location.href = "nift.html#bdes";
+  }
+}
+
+function goToNIFTMDes(e) {
+  stop(e);
+  if (location.pathname.includes("nift.html")) {
+    activateSection("mdes");
+  } else {
+    window.location.href = "nift.html#mdes";
+  }
+}
+
+// ===== UCEED =====
+function goToUCEED(e) {
+  stop(e);
+  window.location.href = "uceed.html";
+}
+
+function goToUCEEDBDes(e) {
+  stop(e);
+  window.location.href = "uceed.html";
+}
+
+// ===== CEED =====
+function goToCEED(e) {
+  stop(e);
+  window.location.href = "ceed.html";
+}
+
+function goToCEEDMDes(e) {
+  stop(e);
+  window.location.href = "ceed.html";
+}
+
+// ===== NATA =====
+function goToNATABArch(e) {
+  stop(e);
+  window.location.href = "nata.html";
+}
+
+function goToCOA(e) {
+  stop(e);
+  window.location.href = "nata.html";
+}
+
+// ===== JEE =====
+function goToJEEBArch(e) {
+  stop(e);
+  window.location.href = "jee.html";
+}
+
+function goToJEEBPlanning(e) {
+  stop(e);
+  window.location.href = "jee.html";
+}
+
+function goToJEE(e) {
+  stop(e);
+  window.location.href = "jee.html";
+}
+
+// ===== SECTION SWITCH (NID + NIFT) =====
+function activateSection(type) {
+  document.querySelectorAll('.nid-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nid-sw-btn').forEach(b => b.classList.remove('active'));
+
+  const page = document.getElementById('nid-page-' + type);
+  if (page) page.classList.add('active');
+
+  const buttons = document.querySelectorAll('.nid-sw-btn');
+  if (type === "bdes" && buttons[0]) buttons[0].classList.add('active');
+  if (type === "mdes" && buttons[1]) buttons[1].classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// ===== HASH SUPPORT =====
+window.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === "bdes" || hash === "mdes") {
+    activateSection(hash);
+  }
+});
