@@ -120,41 +120,6 @@ async function handleSubmit() {
   }
 }
 
-// blog-detail.js — save as js/blog-detail.js
-
-// Active TOC link on scroll
-const bdSections = document.querySelectorAll('.bd-article section[id]');
-const bdTocLinks = document.querySelectorAll('.bd-toc-link');
-
-if (bdSections.length && bdTocLinks.length) {
-  const tocObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        bdTocLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, { rootMargin: '-25% 0px -65% 0px' });
-
-  bdSections.forEach(s => tocObserver.observe(s));
-}
-
-// Copy link button
-const copyBtn = document.querySelector('.bd-copy-btn');
-if (copyBtn) {
-  copyBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      const svg = copyBtn.querySelector('svg').outerHTML;
-      copyBtn.innerHTML = svg + ' Copied!';
-      setTimeout(() => { copyBtn.innerHTML = svg + ' Copy Link'; }, 2000);
-    });
-  });
-}
-
-
 function indexToggle(id, btn) {
   const el = document.getElementById(id);
   const isOpen = el.classList.toggle('open');
