@@ -258,98 +258,34 @@ const COURSE_SECTION_HTML = `
 })();
 
 
-// ===== COMMON =====
+// ===== NAVIGATION HELPERS =====
 function stop(e) {
   e.preventDefault();
   e.stopPropagation();
 }
 
-// ===== NID =====
-function goToNIDBDes(e) {
+function navigateTo(e, url, section) {
   stop(e);
-  if (location.pathname.includes("nid.html")) {
-    activateSection("bdes");
+  if (section && location.pathname.includes(url)) {
+    activateSection(section);
   } else {
-    window.location.href = "nid.html#bdes";
+    window.location.href = section ? url + '#' + section : url;
   }
 }
 
-function goToNIDMDes(e) {
-  stop(e);
-  if (location.pathname.includes("nid.html")) {
-    activateSection("mdes");
-  } else {
-    window.location.href = "nid.html#mdes";
-  }
-}
-
-// ===== NIFT =====
-function goToNIFTBDes(e) {
-  stop(e);
-  if (location.pathname.includes("nift.html")) {
-    activateSection("bdes");
-  } else {
-    window.location.href = "nift.html#bdes";
-  }
-}
-
-function goToNIFTMDes(e) {
-  stop(e);
-  if (location.pathname.includes("nift.html")) {
-    activateSection("mdes");
-  } else {
-    window.location.href = "nift.html#mdes";
-  }
-}
-
-// ===== UCEED =====
-function goToUCEED(e) {
-  stop(e);
-  window.location.href = "uceed.html";
-}
-
-function goToUCEEDBDes(e) {
-  stop(e);
-  window.location.href = "uceed.html";
-}
-
-// ===== CEED =====
-function goToCEED(e) {
-  stop(e);
-  window.location.href = "ceed.html";
-}
-
-function goToCEEDMDes(e) {
-  stop(e);
-  window.location.href = "ceed.html";
-}
-
-// ===== NATA =====
-function goToNATABArch(e) {
-  stop(e);
-  window.location.href = "nata.html";
-}
-
-function goToCOA(e) {
-  stop(e);
-  window.location.href = "nata.html";
-}
-
-// ===== JEE =====
-function goToJEEBArch(e) {
-  stop(e);
-  window.location.href = "jee.html";
-}
-
-function goToJEEBPlanning(e) {
-  stop(e);
-  window.location.href = "jee.html";
-}
-
-function goToJEE(e) {
-  stop(e);
-  window.location.href = "jee.html";
-}
+function goToNIDBDes(e)    { navigateTo(e, 'nid.html',  'bdes'); }
+function goToNIDMDes(e)    { navigateTo(e, 'nid.html',  'mdes'); }
+function goToNIFTBDes(e)   { navigateTo(e, 'nift.html', 'bdes'); }
+function goToNIFTMDes(e)   { navigateTo(e, 'nift.html', 'mdes'); }
+function goToUCEED(e)      { navigateTo(e, 'uceed.html'); }
+function goToUCEEDBDes(e)  { navigateTo(e, 'uceed.html'); }
+function goToCEED(e)       { navigateTo(e, 'ceed.html'); }
+function goToCEEDMDes(e)   { navigateTo(e, 'ceed.html'); }
+function goToNATABArch(e)  { navigateTo(e, 'nata.html'); }
+function goToCOA(e)        { navigateTo(e, 'nata.html'); }
+function goToJEEBArch(e)   { navigateTo(e, 'jee.html'); }
+function goToJEEBPlanning(e){ navigateTo(e, 'jee.html'); }
+function goToJEE(e)        { navigateTo(e, 'jee.html'); }
 
 // ===== SECTION SWITCH (NID + NIFT) =====
 function activateSection(type) {
