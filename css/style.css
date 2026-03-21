@@ -788,6 +788,14 @@ footer {
   border-right: 1px solid var(--border);
   padding: 4rem 2.5rem;
 }
+
+@media (max-width: 600px) {
+  .fcol {
+    border-bottom: 1px solid var(--border);
+}
+
+  }
+
 .fcol iframe{
     filter: grayscale(1) contrast(1.05);
 }
