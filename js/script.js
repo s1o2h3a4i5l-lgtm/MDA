@@ -127,6 +127,21 @@ function indexToggle(id, btn) {
   btn.childNodes[0].textContent = isOpen ? 'Read Less ' : 'Read More ';
 }
 
+function nataShowTab(id, btn) {
+  const section = btn.closest('.uc-tabbed');
+  section.querySelectorAll('.uc-tab-pane').forEach(p => p.classList.remove('active'));
+  section.querySelectorAll('.uc-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function nataToggle(id, btn) {
+  const el = document.getElementById(id);
+  const isOpen = el.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.childNodes[0].textContent = isOpen ? 'Read Less ' : 'Read More ';
+}
+
 // ─── Courses Section ─────────────────────────────────────────────────────────
 
 const PAGE_EXAM_MAP = {
