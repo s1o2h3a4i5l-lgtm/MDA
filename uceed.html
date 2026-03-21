@@ -280,12 +280,6 @@
     <script src="js/injector.js"></script>
     <script src="js/script.js"></script>
     <script>
-      function ucShowTab(id, btn) {
-        document.querySelectorAll(".uc-tab-pane").forEach(p => p.classList.remove("active"));
-        document.querySelectorAll(".uc-tab-btn").forEach(b => b.classList.remove("active"));
-        document.getElementById(id).classList.add("active");
-        btn.classList.add("active");
-      }
       function ucToggle(id, btn) {
         const el = document.getElementById(id);
         const isOpen = el.classList.toggle("open");
