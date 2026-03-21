@@ -3293,3 +3293,16 @@ h2.uc-sec-title {
     border-bottom: 1px solid var(--border);
   }
 }
+
+@media (max-width: 600px) {
+  .uc-elig-table tbody td:first-child {
+    white-space: normal;
+    width: auto;
+  }
+  .uc-elig-table {
+    font-size: 0.75rem;
+  }
+  .uc-elig-table tbody td {
+    padding: 0.75rem 0.75rem;
+  }
+}

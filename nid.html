@@ -1145,6 +1145,17 @@
     <script src="js/script.js"></script>
 
     <script>
+      function nidShowTab(id, btn) {
+        const section = btn.closest(".uc-tabbed");
+        section
+          .querySelectorAll(".uc-tab-pane")
+          .forEach((p) => p.classList.remove("active"));
+        section
+          .querySelectorAll(".uc-tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        btn.classList.add("active");
+      }
       function nidToggle(id, btn) {
         const el = document.getElementById(id);
         const isOpen = el.classList.toggle("open");
