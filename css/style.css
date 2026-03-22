@@ -1968,6 +1968,7 @@ h2.uc-sec-title {
   gap: 0;
   overflow-x: auto;
   overflow-y: hidden;
+    cursor: grab;
 }
 .uc-tab-btn {
   font-size: 0.68rem;

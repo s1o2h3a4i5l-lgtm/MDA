@@ -375,3 +375,34 @@ window.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('contextmenu', (e) => {
   if (e.target.tagName === 'IMG') e.preventDefault();
 });
+// Drag to scroll tab nav
+document.querySelectorAll('.uc-tab-nav').forEach(nav => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  nav.addEventListener('mousedown', (e) => {
+    isDown = true;
+    nav.style.cursor = 'grabbing';
+    startX = e.pageX - nav.offsetLeft;
+    scrollLeft = nav.scrollLeft;
+  });
+
+  nav.addEventListener('mouseleave', () => {
+    isDown = false;
+    nav.style.cursor = 'grab';
+  });
+
+  nav.addEventListener('mouseup', () => {
+    isDown = false;
+    nav.style.cursor = 'grab';
+  });
+
+  nav.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - nav.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    nav.scrollLeft = scrollLeft - walk;
+  });
+});
