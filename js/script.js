@@ -406,3 +406,32 @@ document.querySelectorAll('.uc-tab-nav').forEach(nav => {
     nav.scrollLeft = scrollLeft - walk;
   });
 });
+// Tab nav scroll indicators (mobile)
+document.querySelectorAll('.uc-tab-nav').forEach(nav => {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'tab-nav-wrap';
+  nav.parentNode.insertBefore(wrapper, nav);
+  wrapper.appendChild(nav);
+
+  const leftArrow = document.createElement('div');
+  const rightArrow = document.createElement('div');
+  leftArrow.className = 'tab-nav-arrow tab-nav-arrow--left';
+  rightArrow.className = 'tab-nav-arrow tab-nav-arrow--right';
+  leftArrow.innerHTML = '‹';
+  rightArrow.innerHTML = '›';
+  wrapper.appendChild(leftArrow);
+  wrapper.appendChild(rightArrow);
+
+  function updateArrows() {
+    const maxScroll = nav.scrollWidth - nav.clientWidth;
+    leftArrow.classList.toggle('visible', nav.scrollLeft > 10);
+    rightArrow.classList.toggle('visible', maxScroll - nav.scrollLeft > 10);
+  }
+
+  nav.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  setTimeout(updateArrows, 100);
+
+  rightArrow.addEventListener('click', () => nav.scrollBy({ left: 120, behavior: 'smooth' }));
+  leftArrow.addEventListener('click', () => nav.scrollBy({ left: -120, behavior: 'smooth' }));
+});
