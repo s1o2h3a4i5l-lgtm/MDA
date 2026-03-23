@@ -898,15 +898,18 @@ footer {
 /* REVEAL */
 .r {
   opacity: 0;
-  transform: translateY(36px);
+  transform: translateY(50px);
   transition:
-    opacity 0.9s ease,
-    transform 0.9s ease;
+    opacity 1.0s ease,
+    transform 1.0s ease;
 }
 .r.v {
   opacity: 1;
   transform: translateY(0);
 }
+.r.v:nth-child(1) { transition-delay: 0.1s; }
+.r.v:nth-child(2) { transition-delay: 0.25s; }
+.r.v:nth-child(3) { transition-delay: 0.4s; }
 /* Fallback: if JS fails, show everything */
 @media (prefers-reduced-motion: reduce) {
   .r {

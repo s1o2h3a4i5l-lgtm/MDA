@@ -15,9 +15,11 @@ document.querySelectorAll(".r").forEach((el) => observer.observe(el));
 
 // Trigger elements already in view on load
 window.addEventListener("load", () => {
-  document.querySelectorAll(".r").forEach((el) => {
+  document.querySelectorAll(".r").forEach((el, i) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) el.classList.add("v");
+    if (rect.top < window.innerHeight) {
+      setTimeout(() => el.classList.add("v"), i * 150);
+    }
   });
 });
 // Dropdown
