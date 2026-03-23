@@ -199,12 +199,12 @@ function nidShowTab(id, btn) {
 // ─── Courses Section ─────────────────────────────────────────────────────────
 
 const PAGE_EXAM_MAP = {
-  "ceed.html": "ceed",
-  "uceed.html": "uceed",
-  "nid.html": "nid-bdes",
-  "nift.html": "nift-bdes",
-  "jee.html": "jee2",
-  "nata.html": "nata",
+  "ceed.html": "design",
+  "uceed.html": "design",
+  "nid.html": "design",
+  "nift.html": "design",
+  "jee.html": "architecture",
+  "nata.html": "architecture",
   "fp.html": "portfolio",
 };
 
