@@ -1772,7 +1772,6 @@ h2.uc-sec-title {
   text-transform: uppercase;
   color: var(--accent);
   border: 1px solid var(--accent);
-  padding: 0.3rem 0.8rem;
   margin-bottom: 1rem;
 }
 .uc-hero h1 {
@@ -2731,7 +2730,11 @@ h2.uc-sec-title {
   max-width: 460px;
   line-height: 1.75;
 }
-
+.uc-hero .hero-badge {
+  display: block;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
 /* badges */
 .hero-badges {
   display: flex;
