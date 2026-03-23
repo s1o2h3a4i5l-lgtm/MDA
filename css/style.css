@@ -2588,18 +2588,20 @@ h2.uc-sec-title {
   text-transform: uppercase;
   padding: 1.1rem 2rem;
   cursor: pointer;
-  background: none;
+  background: transparent;
   border: none;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
   white-space: nowrap;
 }
 .nid-sw-btn.active {
   color: #d4ff00;
+  background: rgba(212, 255, 0, 0.08);
   border-bottom-color: var(--accent);
 }
 .nid-sw-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
 }
 
