@@ -26,10 +26,12 @@ const dropdownToggle = document.querySelector(".has-dropdown > a");
 const dropdown = document.querySelector(".dropdown");
 
 if (dropdownToggle) {
-  // Open on hover (desktop)
+  // Open on hover (desktop only)
   dropdownParent.addEventListener("mouseenter", () => {
-    dropdownParent.classList.add("open");
-    dropdown.classList.add("open");
+    if (window.matchMedia("(hover: hover)").matches) {
+      dropdownParent.classList.add("open");
+      dropdown.classList.add("open");
+    }
   });
 
   // Click toggles on mobile
