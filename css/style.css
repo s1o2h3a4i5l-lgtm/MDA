@@ -2590,7 +2590,7 @@ h2.uc-sec-title {
   cursor: pointer;
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
   white-space: nowrap;
