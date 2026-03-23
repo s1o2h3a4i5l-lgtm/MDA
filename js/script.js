@@ -204,6 +204,7 @@ const PAGE_EXAM_MAP = {
 
 const COURSE_SECTION_HTML = `
 <section id="courses">
+  <h2 class="courses-heading sec-dark-heading">Courses</h2>
   <div class="courses-grid r v">
     <div class="course-card featured">
       <div class="course-rec">Most Recommended</div>
