@@ -898,10 +898,10 @@ footer {
 /* REVEAL */
 .r {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(36px);
   transition:
-    opacity 0.65s ease,
-    transform 0.65s ease;
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 .r.v {
   opacity: 1;

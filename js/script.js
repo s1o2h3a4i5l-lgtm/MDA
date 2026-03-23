@@ -8,7 +8,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.08 },
+  { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
 );
 
 document.querySelectorAll(".r").forEach((el) => observer.observe(el));
@@ -210,7 +210,10 @@ const PAGE_EXAM_MAP = {
 
 const COURSE_SECTION_HTML = `
 <section id="courses">
-  <h2 class="courses-heading sec-dark-heading">Courses</h2>
+      <div class="sec-header r">
+        <span class="label">Courses</span>
+        <h2>courses We offer</h2>
+      </div>
   <div class="courses-grid r v">
     <div class="course-card featured">
       <div class="course-rec">Most Recommended</div>
@@ -294,6 +297,16 @@ const COURSE_SECTION_HTML = `
     });
 
     placeholder.parentNode.replaceChild(toInject, placeholder);
+
+    // Re-observe newly injected reveal elements
+    toInject.querySelectorAll(".r").forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add("v");
+      } else {
+        observer.observe(el);
+      }
+    });
   });
 })();
 
