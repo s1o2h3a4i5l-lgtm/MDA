@@ -2555,11 +2555,13 @@ h2.uc-sec-title {
 
 /* ── PROGRAMME SWITCHER ── */
 .nid-switcher {
-  background: #000;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  position: sticky;
-  bottom: 0;
-  z-index: 200;
+  background: #111;
+  border-bottom: 3px solid var(--accent);
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 
 .nid-switcher-inner {
@@ -2588,13 +2590,13 @@ h2.uc-sec-title {
   cursor: pointer;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.45);
+  color: #fff;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
   white-space: nowrap;
 }
 .nid-sw-btn.active {
-  color: #fff;
+  color: #d4ff00;
   border-bottom-color: var(--accent);
 }
 .nid-sw-btn:hover {
