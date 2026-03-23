@@ -1130,7 +1130,10 @@ footer {
   border-top: 1px solid rgba(0,0,0,0.08);
 } */
 
-.dropdown.open,
+.dropdown.open {
+  display: block;
+}
+
 .has-dropdown:hover .dropdown {
   display: block;
 }
