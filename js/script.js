@@ -26,12 +26,20 @@ const dropdownToggle = document.querySelector(".has-dropdown > a");
 const dropdown = document.querySelector(".dropdown");
 
 if (dropdownToggle) {
+  // Open on hover (desktop)
+  dropdownParent.addEventListener("mouseenter", () => {
+    dropdownParent.classList.add("open");
+    dropdown.classList.add("open");
+  });
+
+  // Click toggles on mobile
   dropdownToggle.addEventListener("click", (e) => {
     e.preventDefault();
     dropdownParent.classList.toggle("open");
     dropdown.classList.toggle("open");
   });
 
+  // Close on click outside
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".has-dropdown")) {
       dropdownParent.classList.remove("open");
@@ -39,14 +47,10 @@ if (dropdownToggle) {
     }
   });
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      dropdownParent.classList.remove("open");
-      dropdown.classList.remove("open");
-    },
-    { passive: true },
-  );
+  window.addEventListener("scroll", () => {
+    dropdownParent.classList.remove("open");
+    dropdown.classList.remove("open");
+  }, { passive: true });
 }
 
 // Scroll to top

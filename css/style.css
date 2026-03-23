@@ -1134,13 +1134,7 @@ footer {
   display: block;
 }
 
-.has-dropdown:hover .dropdown {
-  display: block;
-}
 
-.has-dropdown:hover .dropdown-arrow {
-  transform: rotate(180deg);
-}
 
 .dropdown li a {
   display: block;
