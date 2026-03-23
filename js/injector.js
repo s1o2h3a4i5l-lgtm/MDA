@@ -4,11 +4,37 @@ const header = `
       <a href="index.html" class="nav-logo"
         ><img
           src="/MDA/assets/images/logo.avif" class="nav-logo-img" alt="My Design Academia"/></a>
-           <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+           <button class="mob-burger" id="mobBurger" aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-menu-inner">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about_us.html" class="mob-link">About Us</a>
+    <button class="mob-link mob-exams-toggle" id="mobExamsToggle">
+      Exams
+      <svg class="mob-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="mob-exams-list" id="mobExamsList">
+      <a href="nid.html" class="mob-sub-link">NID DAT</a>
+      <a href="uceed.html" class="mob-sub-link">UCEED</a>
+      <a href="ceed.html" class="mob-sub-link">CEED</a>
+      <a href="nift.html" class="mob-sub-link">NIFT</a>
+      <a href="nata.html" class="mob-sub-link">NATA</a>
+      <a href="jee.html" class="mob-sub-link">JEE Paper 2</a>
+      <a href="fp.html" class="mob-sub-link">Foreign Portfolio</a>
+    </div>
+    <a href="blog.html" class="mob-link">Blog</a>
+    <a href="contactus.html" class="mob-link">Contact</a>
+    <a href="contactus.html?course=counselling#form" class="mob-cta">Free Counselling</a>
+  </div>
+</div>
+<div class="mob-overlay" id="mobOverlay"></div>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>

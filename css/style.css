@@ -3853,3 +3853,141 @@ h2.uc-sec-title {
     padding: 0.75rem 0.75rem;
   }
 }
+/* ── MOBILE BURGER MENU ── */
+.mob-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  z-index: 1001;
+  position: relative;
+}
+.mob-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+.mob-burger.open {
+  position: fixed;
+  top: 22px;
+  right: 1.5rem;
+}
+.mob-burger.open span { background: #000; }
+.mob-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-burger.open span:nth-child(2) { opacity: 0; }
+.mob-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mob-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 998;
+}
+.mob-overlay.open { display: block; }
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(320px, 85vw);
+  height: 100vh;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+.mob-menu.open { transform: translateX(0); }
+
+.mob-menu-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1rem 2rem;
+  overflow-x: hidden;
+}
+
+.mob-link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.2s;
+  margin: 0 -1rem;
+  width: calc(100% + 2rem);
+}
+.mob-link:hover { color: #000; }
+
+.mob-arrow {
+  width: 12px;
+  height: 8px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.mob-exams-toggle.open .mob-arrow { transform: rotate(180deg); }
+
+.mob-exams-list {
+  display: none;
+  flex-direction: column;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  margin: 0 -1rem;
+  width: calc(100% + 2rem);
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.07), inset 0 -4px 10px rgba(0,0,0,0.04);
+}
+.mob-exams-list.open { display: flex; }
+
+.mob-sub-link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.mob-sub-link:last-child { border-bottom: none; }
+.mob-sub-link:hover { color: #000; }
+
+.mob-cta {
+  margin-top: 1.5rem;
+  align-self: center;
+  background: #d4ff00;
+  color: #000;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.mob-cta:hover {
+  background: #333;
+  color: #d4ff00;
+}
+
+@media (max-width: 960px) {
+  .mob-burger { display: flex; }
+  .nav-hamburger { display: none !important; }
+  .nav-links { display: none !important; }
+}

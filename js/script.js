@@ -74,22 +74,38 @@ window.addEventListener("load", () => {
     });
   }
 });
-const hamburger = document.getElementById("navHamburger");
-const navLinks = document.getElementById("navLinks");
+const mobBurger = document.getElementById("mobBurger");
+const mobMenu = document.getElementById("mobMenu");
+const mobOverlay = document.getElementById("mobOverlay");
+const mobExamsToggle = document.getElementById("mobExamsToggle");
+const mobExamsList = document.getElementById("mobExamsList");
 
-if (hamburger) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    navLinks.classList.toggle("open");
+function closeMobMenu() {
+  mobBurger.classList.remove("open");
+  mobMenu.classList.remove("open");
+  mobOverlay.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+if (mobBurger) {
+  mobBurger.addEventListener("click", () => {
+    const isOpen = mobMenu.classList.toggle("open");
+    mobBurger.classList.toggle("open");
+    mobOverlay.classList.toggle("open");
+    document.body.style.overflow = isOpen ? "hidden" : "";
   });
 
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (!link.closest(".has-dropdown")) {
-        hamburger.classList.remove("open");
-        navLinks.classList.remove("open");
-      }
-    });
+  mobOverlay.addEventListener("click", closeMobMenu);
+
+  mobExamsToggle.addEventListener("click", () => {
+    mobExamsToggle.classList.toggle("open");
+    mobExamsList.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".mob-link, .mob-sub-link, .mob-cta").forEach((link) => {
+    if (link.tagName === "A") {
+      link.addEventListener("click", closeMobMenu);
+    }
   });
 }
 
