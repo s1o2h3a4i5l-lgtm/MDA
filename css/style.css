@@ -1130,8 +1130,13 @@ footer {
   border-top: 1px solid rgba(0,0,0,0.08);
 } */
 
-.dropdown.open {
+.dropdown.open,
+.has-dropdown:hover .dropdown {
   display: block;
+}
+
+.has-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
 }
 
 .dropdown li a {
