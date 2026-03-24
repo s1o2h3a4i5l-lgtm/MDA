@@ -51,10 +51,14 @@ if (dropdownToggle) {
     }
   });
 
-  window.addEventListener("scroll", () => {
-    dropdownParent.classList.remove("open");
-    dropdown.classList.remove("open");
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      dropdownParent.classList.remove("open");
+      dropdown.classList.remove("open");
+    },
+    { passive: true },
+  );
 }
 
 // Scroll to top
@@ -102,11 +106,13 @@ if (mobBurger) {
     mobExamsList.classList.toggle("open");
   });
 
-  document.querySelectorAll(".mob-link, .mob-sub-link, .mob-cta").forEach((link) => {
-    if (link.tagName === "A") {
-      link.addEventListener("click", closeMobMenu);
-    }
-  });
+  document
+    .querySelectorAll(".mob-link, .mob-sub-link, .mob-cta")
+    .forEach((link) => {
+      if (link.tagName === "A") {
+        link.addEventListener("click", closeMobMenu);
+      }
+    });
 }
 
 async function handleSubmit() {
@@ -231,6 +237,9 @@ const COURSE_SECTION_HTML = `
       <div class="sec-header r">
         <span class="label">Courses</span>
         <h2>courses We offer</h2>
+             <p>
+          Flexible programs for every stage of preparation.
+        </p>
       </div>
   <div class="courses-grid r v">
     <div class="course-card featured">
@@ -410,33 +419,33 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener('contextmenu', (e) => {
-  if (e.target.tagName === 'IMG') e.preventDefault();
+document.addEventListener("contextmenu", (e) => {
+  if (e.target.tagName === "IMG") e.preventDefault();
 });
 // Drag to scroll tab nav
-document.querySelectorAll('.uc-tab-nav').forEach(nav => {
+document.querySelectorAll(".uc-tab-nav").forEach((nav) => {
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  nav.addEventListener('mousedown', (e) => {
+  nav.addEventListener("mousedown", (e) => {
     isDown = true;
-    nav.style.cursor = 'grabbing';
+    nav.style.cursor = "grabbing";
     startX = e.pageX - nav.offsetLeft;
     scrollLeft = nav.scrollLeft;
   });
 
-  nav.addEventListener('mouseleave', () => {
+  nav.addEventListener("mouseleave", () => {
     isDown = false;
-    nav.style.cursor = 'grab';
+    nav.style.cursor = "grab";
   });
 
-  nav.addEventListener('mouseup', () => {
+  nav.addEventListener("mouseup", () => {
     isDown = false;
-    nav.style.cursor = 'grab';
+    nav.style.cursor = "grab";
   });
 
-  nav.addEventListener('mousemove', (e) => {
+  nav.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - nav.offsetLeft;
@@ -445,31 +454,35 @@ document.querySelectorAll('.uc-tab-nav').forEach(nav => {
   });
 });
 // Tab nav scroll indicators (mobile)
-document.querySelectorAll('.uc-tab-nav').forEach(nav => {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'tab-nav-wrap';
+document.querySelectorAll(".uc-tab-nav").forEach((nav) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "tab-nav-wrap";
   nav.parentNode.insertBefore(wrapper, nav);
   wrapper.appendChild(nav);
 
-  const leftArrow = document.createElement('div');
-  const rightArrow = document.createElement('div');
-  leftArrow.className = 'tab-nav-arrow tab-nav-arrow--left';
-  rightArrow.className = 'tab-nav-arrow tab-nav-arrow--right';
-  leftArrow.innerHTML = '‹';
-  rightArrow.innerHTML = '›';
+  const leftArrow = document.createElement("div");
+  const rightArrow = document.createElement("div");
+  leftArrow.className = "tab-nav-arrow tab-nav-arrow--left";
+  rightArrow.className = "tab-nav-arrow tab-nav-arrow--right";
+  leftArrow.innerHTML = "‹";
+  rightArrow.innerHTML = "›";
   wrapper.appendChild(leftArrow);
   wrapper.appendChild(rightArrow);
 
   function updateArrows() {
     const maxScroll = nav.scrollWidth - nav.clientWidth;
-    leftArrow.classList.toggle('visible', nav.scrollLeft > 10);
-    rightArrow.classList.toggle('visible', maxScroll - nav.scrollLeft > 10);
+    leftArrow.classList.toggle("visible", nav.scrollLeft > 10);
+    rightArrow.classList.toggle("visible", maxScroll - nav.scrollLeft > 10);
   }
 
-  nav.addEventListener('scroll', updateArrows, { passive: true });
-  window.addEventListener('resize', updateArrows);
+  nav.addEventListener("scroll", updateArrows, { passive: true });
+  window.addEventListener("resize", updateArrows);
   setTimeout(updateArrows, 100);
 
-  rightArrow.addEventListener('click', () => nav.scrollBy({ left: 120, behavior: 'smooth' }));
-  leftArrow.addEventListener('click', () => nav.scrollBy({ left: -120, behavior: 'smooth' }));
+  rightArrow.addEventListener("click", () =>
+    nav.scrollBy({ left: 120, behavior: "smooth" }),
+  );
+  leftArrow.addEventListener("click", () =>
+    nav.scrollBy({ left: -120, behavior: "smooth" }),
+  );
 });

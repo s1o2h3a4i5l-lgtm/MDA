@@ -262,6 +262,12 @@ nav {
   padding: 5rem 3rem;
   border-right: 1px solid var(--border);
 }
+.about-left p {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
 .about-left h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(3rem, 5vw, 5rem);
@@ -423,7 +429,6 @@ nav {
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: 1px solid var(--border);
 }
 .course-card {
   border: 1px solid var(--border);
