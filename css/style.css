@@ -1045,7 +1045,7 @@ footer {
 }
 
 .slide-desc {
-  font-size: clamp(0.75rem, 0.6vw + 0.6rem, 0.9rem);
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.75);
   margin: 0 0 1.25rem;
   max-width: 480px;
@@ -1082,9 +1082,9 @@ footer {
     padding: 0.3em 0.3rem;
   }
 
-  /* .slide-desc {
-    display: none;
-  } */
+  .slide-desc {
+    font-size: 0.2rem;
+  }
 }
 
 .nav-logo-img {
