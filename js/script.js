@@ -116,7 +116,7 @@ if (mobBurger) {
 }
 
 async function handleSubmit() {
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkoqdpbz"; // ← replace later
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjgpvplk"; // ← replace later
 
   const name = document.getElementById("f-name").value.trim();
   const phone = document.getElementById("f-phone").value.trim();

@@ -109,8 +109,8 @@ const footer = `
           </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span id="year"></span> My Design Academia — All Rights Reserved</p>
-        <p>Shaping the next generation of designers &amp; architects</p>
+        <p>© <span id="year"></span> My Design Academia - All Rights Reserved</p>
+        <p>Designed & Developed by - PizzaScript</p>
       </div>
     </footer>
 `;
