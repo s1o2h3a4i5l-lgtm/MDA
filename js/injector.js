@@ -3,7 +3,7 @@ const header = `
 <nav>
       <a href="index.html" class="nav-logo"
         ><img
-          src="/MDA/assets/images/logo.avif" class="nav-logo-img" alt="My Design Academia"/></a>
+          src="assets/images/logo.avif" class="nav-logo-img" alt="My Design Academia"/></a>
            <button class="mob-burger" id="mobBurger" aria-label="Toggle menu">
   <span></span>
   <span></span>
@@ -65,7 +65,7 @@ const footer = `
         <div class="fcol">
           <div class="footer-logo">
             <img
-              src="/MDA/assets/images/logo.avif"
+              src="assets/images/logo.avif"
               alt="My Design Academia"
               style="
                 height: 28px;
