@@ -1238,7 +1238,6 @@ footer {
 
 @media (max-width: 768px) {
   .floating-btns {
-    bottom: 1.25rem;
     padding: 0 1.25rem;
   }
 }
@@ -1293,6 +1292,7 @@ footer {
   padding: 0 2rem;
   pointer-events: none;
   align-items: flex-end;
+  transition: bottom 0.2s ease;
 }
 .floating-btns > * {
   pointer-events: auto;

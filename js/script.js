@@ -64,11 +64,29 @@ if (dropdownToggle) {
 // Scroll to top
 window.addEventListener("load", () => {
   const scrollBtn = document.getElementById("scrollTopBtn");
+  const floatingBtns = document.querySelector(".floating-btns");
+  const footer = document.querySelector(".footer-bottom");
+
+  function updateFloatingPos() {
+    if (floatingBtns && footer) {
+      const footerTop = footer.getBoundingClientRect().top;
+      const viewportH = window.innerHeight;
+      const btnH = floatingBtns.offsetHeight;
+      const gap = 32; // 2rem gap above footer
+      if (footerTop < viewportH) {
+        floatingBtns.style.bottom = (viewportH - footerTop + gap) + "px";
+      } else {
+        floatingBtns.style.bottom = "2rem";
+      }
+    }
+  }
+
   if (scrollBtn) {
     window.addEventListener(
       "scroll",
       () => {
         scrollBtn.classList.toggle("visible", window.scrollY > 400);
+        updateFloatingPos();
       },
       { passive: true },
     );
@@ -77,6 +95,8 @@ window.addEventListener("load", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  updateFloatingPos();
 });
 const mobBurger = document.getElementById("mobBurger");
 const mobMenu = document.getElementById("mobMenu");
